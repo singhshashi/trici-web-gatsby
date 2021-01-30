@@ -1,0 +1,32 @@
+.morebenefits-container {
+  text-align: center;
+}
+
+.morebenefits-container > h3 {
+  color: #096583;
+  font-size: 24px;
+}
+
+.morebenefits-row {
+  max-width: 1280px;
+  margin: 30px auto;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding:10px;
+}
+
+.morebenefits-item {
+  text-align: center;
+  display: block;
+  padding: 5px 20px;
+  max-width: 320px;
+}
+
+.morebenefits-item > h6 {
+  margin: 15px;
+  font-weight: 600;
+}

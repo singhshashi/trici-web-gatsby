@@ -1,0 +1,22 @@
+.footer {
+  color: #fff;
+}
+
+.footer-caption {
+  margin-top:25px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1280px;
+  margin:0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5px 20px;
+}
+
+.footer-content .about {
+    max-width: 640px;
+}

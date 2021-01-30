@@ -1,0 +1,22 @@
+.docsContainer {
+  display: grid;
+  grid-template-columns: 200px  auto 200px;
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.navMenu {
+}
+
+.docsContent {
+  padding: 0px 35px;
+}
+
+.docsContent > h1:first-of-type {
+  margin-top:0px;
+}
+
+.docNav{
+}

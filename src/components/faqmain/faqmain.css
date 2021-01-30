@@ -1,0 +1,34 @@
+.faqmain-container {
+  margin:30px auto;
+  text-align: center;
+  max-width: 1280px;
+}
+.faqmain-heading {
+  background-color: #efefef;
+  padding: 1px;
+}
+.faqmain-heading > h4 {
+  color: #096583;
+  margin: 10px 0px;
+}
+.faqmain-content {
+  max-width: 1280px;
+  margin:0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+  padding: 15px;
+}
+.faqmain-item {
+  text-align: left;
+  width: 40%;
+  min-width: 340px;
+  padding:10px;
+}
+
+.faqmain-item > h6 {
+  margin: 10px 0px;
+  font-weight: 600;
+}

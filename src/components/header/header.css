@@ -1,9 +1,33 @@
-.header {
-  
+.headerContainer {
+  max-width: 1280px;
+  margin:0 auto;
+  padding: 6px;
+}
+.headerCollapsed {
+  display: none;
+}
+.headerExpanded {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.headerExpanded > .links {
+  min-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 450px) {
+  .headerExpanded { display: none; }
+  .headerCollapsed { display: flex; }
+}
+
+.logoContainer {
+  cursor: pointer;
 }
 
 .logo {
-  height: 60px;
+  height: 50px;
 }
 
 .headerNavLink {

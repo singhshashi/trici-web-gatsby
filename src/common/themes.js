@@ -1,6 +1,6 @@
-import { createTheme } from 'office-ui-fabric-react/lib/Styling'
+import { createTheme } from '@fluentui/react/lib/Styling'
 
-const themeTriciLight = createTheme({
+const themeTriciLight= createTheme({
     palette: {
       themePrimary: '#074f66',
       themeLighterAlt: '#f0f7f9',
@@ -25,8 +25,8 @@ const themeTriciLight = createTheme({
       black: '#0b0b0b',
       white: '#ffffff',
     }});
-  
-  const themeTriciDark = createTheme({
+
+  const themeTriciDark= createTheme({
     palette: {
       themePrimary: '#ffffff',
       themeLighterAlt: '#767676',

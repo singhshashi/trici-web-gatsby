@@ -1,0 +1,39 @@
+.howitworks-container {
+  text-align: center;
+  padding: 10px;
+  padding-bottom: 25px;
+}
+
+
+.howitworks-container h2 {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+.intro-vid {
+  width: 800px;
+  height: 450px;
+
+}
+
+@media (max-width: 768px) {
+  .intro-vid {
+    width: 640px;
+    height: 360px;
+  }
+}
+@media (max-width: 450px) {
+  .intro-vid {
+      width: 400px;
+      height: 225px;
+  }
+}
+
+@media (max-width: 380px) {
+  .intro-vid {
+      width: 320px;
+      height: 180px;
+  }
+}
