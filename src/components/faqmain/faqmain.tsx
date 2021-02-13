@@ -57,10 +57,10 @@ When viewing a recording in smart mode, the player plays at variable speeds, pla
         </div>
         <div className="faqmain-item">
           <Text as="h6" block variant="mediumPlus">
-            Question
+           When will Trici be available for Windows?
           </Text>
           <Text as="p" block variant="medium">
-            Lorem Ipsem
+            A version that works on Windows is on the cards. <a href="https://forms.zohopublic.in/gettrici/form/TriciDownloads/formperma/a3H9zdJkx7u6ZrSvnNDeIltYE4L2s-LQiAWzAoQt7xY?referrername=gettrici">Join the waitlist</a> and select your OS as Windows to expedite development of that version.
           </Text>
         </div>
       </div>

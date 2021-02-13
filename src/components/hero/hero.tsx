@@ -17,7 +17,7 @@ const HeroContainer: React.FunctionComponent = () =>  {
             </div>
             <div className="hero_cta">
                 <div className="myPrimaryButton">
-                    <span>Download For Free</span>
+                    <a href="https://forms.zohopublic.in/gettrici/form/TriciDownloads/formperma/a3H9zdJkx7u6ZrSvnNDeIltYE4L2s-LQiAWzAoQt7xY?referrername=gettrici">Request Access | Download</a>
                 </div>
             </div>
             <p className="available-announcement">Desktop application available for MacOS<sup>*</sup> and Ubuntu. Coming Soon for Windows<sup>**</sup></p>

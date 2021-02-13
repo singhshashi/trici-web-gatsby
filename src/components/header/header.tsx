@@ -20,15 +20,14 @@ const Header: React.FunctionComponent = () => {
           <div className="logoContainer">
             <a href="/">
               <img
-                src="http://cdn.gettrici.com/trici_logo_light.png"
+                src="https://cdn.gettrici.com/trici_logo_light.png"
                 alt="trici"
                 className="logo"
               />
             </a>
           </div>
           <div className="links">
-            {/* <Link href="/features" theme={themeTriciDark}>Features</Link> */}
-
+            {/* <Link href="/a-radical-new-approach-to-productivity" theme={themeTriciDark}>Why Trici?</Link> */}
             {/* <Link>Pricing</Link> */}
             <Link href="/docs/home" theme={themeTriciDark}>Docs</Link>
             <Link href="/blog" theme={themeTriciDark}>Blog</Link>
@@ -55,17 +54,13 @@ const Header: React.FunctionComponent = () => {
         >
           <ul className="navMenu">
             <li>
-              <Link href="">Features</Link>
-            </li>
-            {/* <li><Link href="">Pricing</Link></li> */}
-            <li>
-              <Link href="">Help</Link>
+              <Link href="/docs/home">Docs</Link>
             </li>
             <li>
-              <Link href="">Changelog</Link>
+              <Link href="/blog">Blog</Link>
             </li>
             <li>
-              <Link href="">Blog</Link>
+              <Link href="/changelog">Changelog</Link>
             </li>
           </ul>
         </Panel>

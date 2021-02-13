@@ -69,6 +69,14 @@
     color:#ffffff;
 }
 
+.myPrimaryButton > a {
+    text-decoration: none;
+    color: #074f66
+}
+.myPrimaryButton > a:hover {
+    color: #fff;
+}
+
 .mainscreenshot {
     max-width: 80%;
 }

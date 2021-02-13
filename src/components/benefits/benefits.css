@@ -23,6 +23,7 @@
 .benefit-text-container {
   text-align:left;
   padding: 5px 20px;
+  max-width: 400px;
 }
 
 .benefit-image-container {
