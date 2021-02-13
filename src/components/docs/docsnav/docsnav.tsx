@@ -9,7 +9,8 @@ function capitalizeFirstLetter(word: string): string {
 
 function getNavLinkStructure(nodes: Array<any>): any {
   let navLinkStructure = { links: [] }
-  nodes.forEach(node => {
+  const docsNodes = nodes.filter(node => node.relativeDirectory.includes("docs"))
+  docsNodes.forEach(node => {
     const level = (node.relativeDirectory.match(/\//g) || []).length
     if (level === 0) {
       const navLinkObject = {
@@ -47,7 +48,6 @@ const DocsNav: React.FunctionComponent = ({ selectedNode }) => {
   const navLinkGroups: INavLinkGroup[] = [navLinkStructure]
 
   const navStyles: Partial<INavStyles> = { root: { width: 200 } }
-  console.log("selectedNode:Props:", selectedNode);
   return (
     <div>
       <Nav

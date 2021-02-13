@@ -16,6 +16,7 @@ exports.onCreateNode = ({ node, actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const docsTemplate = path.resolve(`./src/templates/docs.tsx`);
+  const pageTemplate = path.resolve(`./src/templates/markdownpage.tsx`);
   const result = await graphql(`
     query {
       allMarkdownRemark {
@@ -35,9 +36,11 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   result.data.allMarkdownRemark.nodes.forEach(node => {
+    const path = `${node.fields.slug}`;
+    const pageComponent = path.includes("docs") ?  docsTemplate : pageTemplate;
     createPage({
       path: `${node.fields.slug}`,
-      component: docsTemplate,
+      component: pageComponent,
       context: { slug: `${node.fields.slug}`}
     })
   })

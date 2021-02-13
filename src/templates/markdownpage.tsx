@@ -1,6 +1,6 @@
 import React from "react"
 import { Stack, Text, Link, FontWeights } from "@fluentui/react"
-import "./docs.css"
+import "./page.css"
 import { themes } from "../common/themes"
 import Layout from "../components/layout/layout"
 import DocsNav from "../components/docs/docsnav/docsnav"
@@ -25,13 +25,9 @@ export const query = graphql`
 const Docs: React.FunctionComponent = (props) => {
   return (
     <Layout>
-      <div className="docsContainer">
-        <div className="navMenu">
-          <DocsNav selectedNode={props.data.markdownRemark.fields.slug} />
+      <div className="pageContainer">
+        <div className="pageContent" dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html}}>
         </div>
-        <div className="docsContent" dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html}}>
-        </div>
-        <div className="docNav" />
       </div>
     </Layout>
   )

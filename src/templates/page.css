@@ -1,0 +1,19 @@
+.pageContainer {
+  display: grid;
+  grid-template-columns: auto;
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.navMenu {
+}
+
+.pageContent {
+  padding: 0px 35px;
+}
+
+.pageContent > h1:first-of-type {
+  margin-top:0px;
+}
