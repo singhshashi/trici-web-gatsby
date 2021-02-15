@@ -1,0 +1,20 @@
+.donwloadContainer {
+  text-align: center;
+}
+
+.donwloadButtonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin:0 auto;
+  justify-content: center;
+}
+.downloadButton {
+  padding: 5px 35px;
+}
+.macos-logo {
+  margin-right: 30px;
+}
+.legalstuff {
+  margin-top: 70px;
+}
