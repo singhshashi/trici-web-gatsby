@@ -5,6 +5,10 @@ import "../../templates/page.css"
 import "./downloads.css"
 
 const MacDownload: React.FunctionComponent = () => {
+  function downloadInstaller(e){
+    console.log('Download Button was clicked');
+    window.open('https://download.gettrici.com/darwin-x64/Trici-2.1.2.dmg');
+  }
   return (
     <Layout>
       <div className="pageContainer">
@@ -20,6 +24,7 @@ const MacDownload: React.FunctionComponent = () => {
               secondaryText="MacOS 10.12+"
               iconProps={{ iconName: "Download" }}
               className="downloadButton"
+              onClick={downloadInstaller}
             >
               DOWNLOAD
             </CompoundButton>

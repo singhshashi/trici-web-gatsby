@@ -5,6 +5,10 @@ import "../../templates/page.css"
 import "./downloads.css"
 
 const UbuntuDownload: React.FunctionComponent = () => {
+  function downloadInstaller(e) {
+    console.log("Download Button Clicked");
+    window.open('https://download.gettrici.com/linux-x64/trici_2.2.0_amd54.deb');
+  }
   return (
     <Layout>
       <div className="pageContainer">
