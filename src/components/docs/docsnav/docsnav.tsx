@@ -7,23 +7,45 @@ function capitalizeFirstLetter(word: string): string {
   return word.charAt(0).toUpperCase() + word.slice(1)
 }
 
+function replaceHyphenWithSpace(word: string): string {
+  return word.replace('-', ' ');
+}
+
 function getNavLinkStructure(nodes: Array<any>): any {
   let navLinkStructure = { links: [] }
   const docsNodes = nodes.filter(node => node.relativeDirectory.includes("docs"))
   docsNodes.forEach(node => {
     const level = (node.relativeDirectory.match(/\//g) || []).length
+    const cleanedNodeName = node.name.split("__")[0];
+    const nodePosition = node.name.split("__")[1];
     if (level === 0) {
       const navLinkObject = {
-        name: capitalizeFirstLetter(node.name),
-        url: `/${node.relativeDirectory}/${node.name}`,
-        key: `/${node.relativeDirectory}/${node.name}`,
+        name: replaceHyphenWithSpace(capitalizeFirstLetter(cleanedNodeName)),
+        url: `/${node.relativeDirectory}/${cleanedNodeName}`,
+        key: `/${node.relativeDirectory}/${cleanedNodeName}`,
         isExpanded: true,
       }
-      if (node.name === "home") {
-        navLinkStructure.links.unshift(navLinkObject)
-      } else {
-        navLinkStructure.links.push(navLinkObject)
+      navLinkStructure.links.splice(nodePosition,0,navLinkObject)
+
+    } else if (level === 1) {
+      const parentLinkObjectName = replaceHyphenWithSpace(capitalizeFirstLetter(node.relativeDirectory.split("docs/")[1]));
+      if (!navLinkStructure.links.some(link => link.name === parentLinkObjectName)) {
+        const parentLinkObject = {
+          name: parentLinkObjectName,
+          isExpanded: true,
+          key: `/${node.relativeDirectory}`,
+          links: []
+        }
+        navLinkStructure.links.push(parentLinkObject);
       }
+      const parentLinkObject = navLinkStructure.links.find(link => link.name === parentLinkObjectName);
+      const navLinkObject = {
+        name: replaceHyphenWithSpace(capitalizeFirstLetter(cleanedNodeName)),
+        url: `/${node.relativeDirectory}/${cleanedNodeName}`,
+        key: `/${node.relativeDirectory}/${cleanedNodeName}`,
+        isExpanded: true,
+      }
+      parentLinkObject.links.splice(nodePosition,0,navLinkObject);
     }
   })
   console.log(navLinkStructure)

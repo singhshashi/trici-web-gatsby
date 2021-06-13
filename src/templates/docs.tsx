@@ -29,9 +29,15 @@ const Docs: React.FunctionComponent = (props) => {
         <div className="navMenu">
           <DocsNav selectedNode={props.data.markdownRemark.fields.slug} />
         </div>
-        <div className="docsContent" dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html}}>
+        <div className="docsContentContainer">
+         <div className="docsContent" dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html}}>
+         </div>
+         <div className="docsContentFooter">
+            <Text as="p" variant="medium">  Page Last Updated On: {props.data.markdownRemark.frontmatter.lastUpdatedDate} </Text>
+         </div>
         </div>
-        <div className="docNav" />
+        <div className="docNav">
+        </div>
       </div>
     </Layout>
   )

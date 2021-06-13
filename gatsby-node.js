@@ -3,7 +3,7 @@ const path = require("path")
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === "MarkdownRemark") {
-    const slug = node.fileAbsolutePath.split("content")[1].replace(".md", "")
+    const slug = node.fileAbsolutePath.split("content")[1].replace(".md", "").split("__")[0]
 
     createNodeField({
       node,

@@ -7,15 +7,16 @@ import "./downloads.css"
 const UbuntuDownload: React.FunctionComponent = () => {
   function downloadInstaller(e) {
     console.log("Download Button Clicked");
-    window.open('https://download.gettrici.com/linux-x64/trici_2.2.0_amd54.deb');
+    window.open('https://download.gettrici.com/linux-x64/trici_2.2.0_amd64.deb');
   }
+
   return (
     <Layout>
       <div className="pageContainer">
         <div className="donwloadContainer">
           <div className="donwloadButtonContainer">
             <img
-              alt="Mac"
+              alt="Ubuntu"
               src="https://cdn.gettrici.com/ubuntu_orange_hex_su.svg"
               className="macos-logo"
             />
@@ -24,6 +25,7 @@ const UbuntuDownload: React.FunctionComponent = () => {
               secondaryText="ubuntu 16.04+"
               iconProps={{ iconName: "Download" }}
               className="downloadButton"
+              onClick={downloadInstaller}
             >
               DOWNLOAD
             </CompoundButton>
