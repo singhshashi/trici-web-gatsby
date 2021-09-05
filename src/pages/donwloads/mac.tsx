@@ -7,7 +7,7 @@ import "./downloads.css"
 const MacDownload: React.FunctionComponent = () => {
   function downloadInstaller(e){
     console.log('Download Button was clicked');
-    window.open('https://download.gettrici.com/darwin-x64/Trici-2.1.2.dmg');
+    window.open('https://download.gettrici.com/darwin-x64/Trici-2.3.4.dmg');
   }
   return (
     <Layout>
