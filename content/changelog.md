@@ -1,11 +1,82 @@
-
-Version 2.2.0
+Version 2.3.4
 
 # Changelog
 Changes to Trici from 2.1.0 onwards.
 
-## [2.2.0] -2021-03-02
+## [2.3.4] - 2021-09-05
 
+### Added
+- Show appEngine and build versions in the app
+
+### Fixed
+- Timer UI was not updating if navigating to a different screen during a Focus Session
+- Changing log level did not actually change the levels.
+- Changing the day in the Daily Log Panel did not work in some cases.
+- Changing the day did not update the total focus time achieved.
+
+### Changed
+
+
+## [2.3.3] - 2021-08-30
+
+### Added
+- Options to control the level of logging
+- Separate file logging for main and renderer processes.
+
+### Fixed
+- remove lodash usage from TriciRepo which threw an error on build.
+
+### Changed
+- clean up code of redundant logging statements
+
+## [2.3.2] - 2021-08-19
+
+### Added
+- Auto updates for Mac
+
+### Fixed
+- Notifications which Prompt to start a Focus Session.
+- Timer UI stops updating if you navigate to a different screen during a Focus Session.
+
+### Changed
+- How notes are shown in the Trici player for better space utilization.
+- Reduce the amount of logs that go to remote
+
+## [2.3.1] - 2021-08-11
+
+### Added
+- Ability to start a Focus Session for a task
+- Link Focus Session with Task such that FS started and comments added during FS show up in Task
+  activity.
+- Allow ability to add notes/thoughts about the day.
+- Tooltips for Icon Buttons
+### Fixed
+- Activity stream now scrolls properly when content overflows.
+
+### Changed
+- Provided a min size to the main Window.
+- Show Day Plan as a Panel accessible from the Command Bar.
+- Improvements to how In-App messages are shown.
+
+## [2.3.0] - 2021-07-23
+
+In memory of those who departed from this world during the massive second wave of Covid in India.
+
+### Added
+- A new way to show notifications within the app itself rather than use system notifications.
+
+### Fixed
+- Delete Focus Session now works correctly in MySessions screen.
+- Focus Session was ending when any other app was minimized on Mac.
+- Review Session was not changing playback speed based on regions.
+
+### Changed
+- Reduce the amount of logs generated.
+- Optmized recording script performance.
+- App does not show in the dock at all. Its completely a menubar app now.
+- Default theme used in the app for better contrast.
+
+## [2.2.0] -2021-03-02
 ### Added
 - Command Buttons for Session In Progress Actions.
 - Setting to enable/disable Session In Progress Command Line.
