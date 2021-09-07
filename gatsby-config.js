@@ -20,20 +20,10 @@ module.exports = {
     },
     "gatsby-transformer-remark",
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        trackingIds: [
-          "UA-77981996-1",
-        ],
-        gtagConfig: {
-          anonymize_ip: true,
-          cookie_expires: 0,
-        },
-        pluginConfig: {
-          head: true,
-          respectDNT: true,
-          exclude: [],
-        }
+        id: "GTM-KRMM7BN",
+        includeInDevelopment: false,
       }
     },
     {

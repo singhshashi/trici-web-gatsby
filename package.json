@@ -21,6 +21,7 @@
     "gatsby": "^2.29.3",
     "gatsby-plugin-crisp-chat": "^3.2.2",
     "gatsby-plugin-google-gtag": "^2.8.0",
+    "gatsby-plugin-google-tagmanager": "^3.13.0",
     "gatsby-plugin-s3": "^0.3.8",
     "gatsby-transformer-remark": "^2.13.1",
     "react": "^16.8.6",
