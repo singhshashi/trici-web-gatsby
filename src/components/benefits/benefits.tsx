@@ -20,7 +20,7 @@ const Benefits: React.FunctionComponent = () => {
         <div className="benefit-image-container">
           <img
             alt="benefit"
-            src="https://via.placeholder.com/640x480.png?text=Trici Focus Session Review"
+            src="images/RecapSession.gif"
             className="benefit-image"
           />
         </div>
@@ -37,7 +37,7 @@ const Benefits: React.FunctionComponent = () => {
         <div className="benefit-image-container">
           <img
             alt="benefit"
-            src="https://via.placeholder.com/640x480.png?text=Trici Focus Session Review"
+            src="images/SearchByTask.gif"
             className="benefit-image"
           />
         </div>
@@ -54,7 +54,7 @@ const Benefits: React.FunctionComponent = () => {
         <div className="benefit-image-container">
           <img
             alt="benefit"
-            src="https://via.placeholder.com/640x480.png?text=Trici Focus Session Review"
+            src="images/WebsiteBlocker.gif"
             className="benefit-image"
           />
         </div>

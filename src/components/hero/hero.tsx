@@ -23,7 +23,7 @@ const HeroContainer: React.FunctionComponent = () =>  {
             </div>
             <p className="available-announcement">Desktop application available for MacOS<sup>*</sup> and Ubuntu. Coming Soon for Windows<sup>**</sup></p>
             </div>
-            {/* <img src="images/TriciMainScreen.webp" alt="Trici Main Screen" className="mainscreenshot" /> */}
+            <img src="images/TriciHomeExplain.png" alt="Trici Main Screen" className="mainscreenshot" />
         </div>
     )
 }

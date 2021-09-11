@@ -52,6 +52,13 @@ const MoreBenefits: React.FunctionComponent = () => {
           <Text as="p" block>Choose how much space should recordings occupy before they start getting purged.</Text>
         </div>
       </div>
+      <div className="morebenefits-row">
+        <div className="morebenefits-item">
+          <FontIcon iconName="AddNotes" className={iconClass} />
+          <Text as="h6" variant="large" block>Automatic Daily Work Log</Text>
+          <Text as="p" block>Trici keeps a log of your daily work. Add tasks to your day plan, note down thoughts about the day.</Text>
+        </div>
+      </div>
     </div>
   )
 }

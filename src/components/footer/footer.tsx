@@ -42,6 +42,10 @@ const Footer = () => {
           <Text as="p" variant="large" block>Follow us on Twitter</Text>
 
           <a href="https://twitter.com/gettrici">twitter.com/gettrici</a>
+
+          <Text as="p" variant="large" block>Join our discord</Text>
+
+          <a href="https://discord.gg/866ErbpvEF">discord/gettrici</a>
         </div>
       </div>
     </footer>
