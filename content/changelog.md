@@ -1,3 +1,9 @@
+---
+title: 'Changelog'
+description: 'Here you will find the detailed release notes including improvements, bug fixes, new features and more about the Trici desktop app.'
+keywords: 'Changelog, release notes, bug fixes'
+lastUpdatedDate: '05 Sep 2021'
+---
 Version 2.3.4
 
 # Changelog

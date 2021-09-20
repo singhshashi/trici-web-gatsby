@@ -1,4 +1,5 @@
 ---
+title: 'Installation Guide'
 lastUpdatedDate: '12 Mar 2021'
 ---
 # Installation

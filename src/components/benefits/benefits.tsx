@@ -23,6 +23,9 @@ const Benefits: React.FunctionComponent = () => {
             src="images/RecapSession.gif"
             className="benefit-image"
           />
+          <Text as="p" block variant="smallPlus">
+            A High Speed Replay of a Focus Session.
+          </Text>
         </div>
       </div>
       <div className="benefit inverse">
@@ -31,7 +34,7 @@ const Benefits: React.FunctionComponent = () => {
             Easier Context Switching
           </Text>
           <Text as="p" block variant="mediumPlus">
-            Having to switch between tasks often? With Trici, you can filter Focus Sessions by Task allowing you to recover your train of thought for a task you had to leave unfinished. Trici is a superpower for those who have to switch between tasks often.
+            Having to switch between tasks often? With Trici, you can filter Focus Sessions by Task or date allowing you to recover your train of thought for a task you had to leave unfinished. Trici is a superpower for those who have to switch between tasks often.
           </Text>
         </div>
         <div className="benefit-image-container">
@@ -40,6 +43,9 @@ const Benefits: React.FunctionComponent = () => {
             src="images/SearchByTask.gif"
             className="benefit-image"
           />
+          <Text as="p" block variant="smallPlus">
+            Filter Focus Sessions by Task Name or Date.
+          </Text>
         </div>
       </div>
       <div className="benefit">
@@ -57,6 +63,9 @@ const Benefits: React.FunctionComponent = () => {
             src="images/WebsiteBlocker.gif"
             className="benefit-image"
           />
+          <Text as="p" block variant="smallPlus">
+            Twitter, facebook and other sites blocked during a Focus Session.
+          </Text>
         </div>
       </div>
     </div>

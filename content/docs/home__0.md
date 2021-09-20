@@ -1,4 +1,5 @@
 ---
+title: 'Welcome to Trici Docs'
 lastUpdatedDate: '12 Mar 2021'
 ---
 

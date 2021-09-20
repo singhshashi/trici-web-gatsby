@@ -19,7 +19,7 @@ const FaqMain: React.FunctionComponent = () => {
             Trici is currently available for macOS (10.12 or higher) and Ubuntu
             Linux(14.10 or higher). The system RAM should be 8 GB or more. For
             macOS, Trici only supports the Intel chips architecture. Apple
-            Silicon support is expected soon.
+            Silicon support is in the works.
           </Text>
         </div>
         <div className="faqmain-item">
@@ -44,7 +44,7 @@ const FaqMain: React.FunctionComponent = () => {
            What if I use multiple monitors?
           </Text>
           <Text as="p" block variant="medium">
-             For MacOS, Trici asks you which screen it should record, if you have multiple displays connected to your system. For linux, it records both the displays. Currently, this support is very rudimentary.
+             You can specify which screen to record in the settings. Currently, Trici can only record one screen.
           </Text>
         </div>
         <div className="faqmain-item">
@@ -60,7 +60,7 @@ When viewing a recording in smart mode, the player plays at variable speeds, pla
            When will Trici be available for Windows?
           </Text>
           <Text as="p" block variant="medium">
-            A version that works on Windows is on the cards. <a href="https://forms.zohopublic.in/gettrici/form/TriciDownloads/formperma/a3H9zdJkx7u6ZrSvnNDeIltYE4L2s-LQiAWzAoQt7xY?referrername=gettrici">Join the waitlist</a> and select your OS as Windows to expedite development of that version.
+            A version that works on Windows is under development and expected to be available tentatively by November 5, 2021. <a href="https://forms.zohopublic.in/gettrici/form/TriciDownloads/formperma/a3H9zdJkx7u6ZrSvnNDeIltYE4L2s-LQiAWzAoQt7xY?referrername=gettrici">Join the waitlist</a> and select your OS as Windows to expedite development of that version.
           </Text>
         </div>
       </div>

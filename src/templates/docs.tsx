@@ -5,6 +5,7 @@ import { themes } from "../common/themes"
 import Layout from "../components/layout/layout"
 import DocsNav from "../components/docs/docsnav/docsnav"
 import { graphql } from "gatsby"
+import {Helmet} from "react-helmet";
 
 export const query = graphql`
   query($slug: String!) {
@@ -25,6 +26,9 @@ export const query = graphql`
 const Docs: React.FunctionComponent = (props) => {
   return (
     <Layout>
+      <Helmet>
+        <title>{props.data.markdownRemark.frontmatter.title}</title>
+      </Helmet>
       <div className="docsContainer">
         <div className="navMenu">
           <DocsNav selectedNode={props.data.markdownRemark.fields.slug} />

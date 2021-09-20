@@ -10,10 +10,16 @@ import Benefits from "../components/benefits/benefits"
 import Layout from "../components/layout/layout"
 import MoreBenefits from "../components/morebenefits/morebenefits"
 import FaqMain from "../components/faqmain/faqmain"
+import {Helmet} from 'react-helmet';
 
 const App: React.FunctionComponent = () => {
   return (
     <Layout>
+    <Helmet>
+      <title>Trici - Recover your train of thought after any interruption</title>
+      <meta name="description" content="Start a Focus Session on Trici, record your screen activity and then watch a smart replay to recover your exact train of thought in less than 2 minutes." />
+      <meta name="keywords" content="pomodoro, timer, screen recording, productivity, interruption, focus, deep work" />
+    </Helmet>
       <Hero />
       <HowItWorks />
       <Benefits />
