@@ -60,7 +60,7 @@ When viewing a recording in smart mode, the player plays at variable speeds, pla
            When will Trici be available for Windows?
           </Text>
           <Text as="p" block variant="medium">
-            A version that works on Windows is under development and expected to be available tentatively by November 5, 2021. <a href="https://forms.zohopublic.in/gettrici/form/TriciDownloads/formperma/a3H9zdJkx7u6ZrSvnNDeIltYE4L2s-LQiAWzAoQt7xY?referrername=gettrici">Join the waitlist</a> and select your OS as Windows to expedite development of that version.
+            A version that works on Windows is under development and expected to be available tentatively by November 5, 2021. Request Access and select your OS as Windows to expedite development of that version.
           </Text>
         </div>
       </div>

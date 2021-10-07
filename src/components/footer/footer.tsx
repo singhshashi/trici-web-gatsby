@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { ThemeProvider } from "@fluentui/react-theme-provider"
 import { Text } from "@fluentui/react"
+import { Stack } from "@fluentui/react/lib/Stack"
 import { themes } from "../../common/themes"
 import "./footer.css"
 
@@ -39,13 +40,14 @@ const Footer = () => {
           </Text>
         </div>
         <div className="links">
-          <Text as="p" variant="large" block>Follow us on Twitter</Text>
+          <Stack>
+            <Stack.Item>
+              <a href="https://discord.gg/866ErbpvEF"><img src="images/join_discord.webp" alt="join us on discord" width="100px" /></a>
+            </Stack.Item>
+          </Stack>
 
-          <a href="https://twitter.com/gettrici">twitter.com/gettrici</a>
 
-          <Text as="p" variant="large" block>Join our discord</Text>
 
-          <a href="https://discord.gg/866ErbpvEF">discord/gettrici</a>
         </div>
       </div>
     </footer>
