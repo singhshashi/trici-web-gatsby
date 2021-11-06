@@ -136,9 +136,9 @@ const HeroContainer: React.FunctionComponent = () =>  {
                         <Stack.Item>
                             <ChoiceGroup options={osChoiceGroupOptions} label="OS" required selectedKey={osSelected} onChange={onChangeOSSelected} />
                         </Stack.Item>
-                        <Stack.Item>
+                        {/* <Stack.Item>
                             <TextField label="Invite Code for download" value={inviteCode}  onChange={onChangeInviteCode} />
-                        </Stack.Item>
+                        </Stack.Item> */}
                         <Stack.Item>
                             {showSpinner && <Spinner size={SpinnerSize.small} className={spinnerContainerCssClass} />}
                             {showError && <MessageBar messageBarType={MessageBarType.error} onDismiss={toggleShowError}>Oops! There was an error! Contact feedback@gettrici.com</MessageBar>}
