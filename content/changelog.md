@@ -2,12 +2,37 @@
 title: 'Changelog'
 description: 'Here you will find the detailed release notes including improvements, bug fixes, new features and more about the Trici desktop app.'
 keywords: 'Changelog, release notes, bug fixes'
-lastUpdatedDate: '05 Sep 2021'
+lastUpdatedDate: '05 Nov 2021'
 ---
-Version 2.3.4
+Version 2.5.0
 
 # Changelog
 Changes to Trici from 2.1.0 onwards.
+
+## [2.5.0] - 2021-11-05
+
+### Added 
+- Trici now has native builds for Apple Silicon. 
+- Have a separate release and update channel for Arm builds. 
+
+### Fixed 
+- UX where window is on top of Fullscreen apps on Mac. 
+- Timer time in UI was out of sync with actual session time. 
+- Multiple entries were created for the same Focus Session. 
+
+### Changed
+- Updated to latest release of Electron, changing how renderer process accesses the main process modules for greater security.
+
+## [2.4.0] - 2021-10-04
+
+### Added 
+- Allow recording of only the selected screen on Linux. 
+- Allow user to send feeback from within the app. 
+
+### Fixed 
+- When navigating between dates Focus Session does not change. 
+
+### Changed
 
 ## [2.3.4] - 2021-09-05
 
