@@ -4,7 +4,7 @@ import Header from "../header/header"
 import { Customizations } from '@fluentui/react/lib/Utilities';
 import { themes } from '../../common/themes'
 import { FontSizes } from '@uifabric/fluent-theme/lib/fluent/FluentType';
-import { Stack, Text, mergeStyles } from '@fluentui/react';
+import { Stack, Text, MessageBar, MessageBarType, mergeStyles } from '@fluentui/react';
 import { Dialog, DialogType, DialogFooter } from '@fluentui/react/lib/Dialog';
 import { PrimaryButton, DefaultButton } from '@fluentui/react/lib/Button';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
@@ -87,8 +87,8 @@ const HeroContainer: React.FunctionComponent = () =>  {
     }, [name, email, osSelected]);
 
     const osChoiceGroupOptions = [
-        {key: 'macosint', text: 'Mac OS - Intel Chipset' },
-        {key: 'macosapple', text: 'Mac OS - Apple' },
+        {key: 'macosint', text: 'Mac OS - Intel x64' },
+        {key: 'macosapple', text: 'Mac OS - Apple Silicon arm64' },
         {key: 'ubuntu', text: 'Ubuntu' },
         {key: 'linux', text: 'Other Linux' },
         {key: 'windows', text: 'Windows'}
@@ -118,7 +118,7 @@ const HeroContainer: React.FunctionComponent = () =>  {
                     <p className="byline">Record and recap your Focus Sessions and rebuild your lost train of thought in seconds!</p>
             </div>
             <div className="hero_cta">
-                <PrimaryButton text="Download for Free" onClick={toggleHideDialog} styles={heroButtonStyles} iconProps={{ iconName: "Installation" }} />
+                <PrimaryButton text="Download for Free" onClick={toggleHideDialog} styles={heroButtonStyles} iconProps={{ iconName: "Installation" }} id="btnDownloadForFree" />
                 <Dialog
                     hidden={hideDialog}
                     onDismiss={toggleHideDialog}
@@ -146,7 +146,7 @@ const HeroContainer: React.FunctionComponent = () =>  {
                     </Stack>
                     <DialogFooter>
 
-                        <PrimaryButton onClick={submitForm} text="Submit" disabled={!formReady} />
+                        <PrimaryButton onClick={submitForm} text="Submit" disabled={!formReady} id="btnSubmitDownloadRequestAccessForm" />
                         <DefaultButton onClick={toggleHideDialog} text="Cancel" />
 
                     </DialogFooter>
