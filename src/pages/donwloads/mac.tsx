@@ -7,7 +7,14 @@ import "./downloads.css"
 const MacDownload: React.FunctionComponent = () => {
   function downloadInstaller(e){
     console.log('Download Button was clicked');
-    window.open('https://download.gettrici.com/darwin-x64/Trici-2.3.4.dmg');
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const ver = urlSearchParams.get('ver');
+    if (ver) {
+        var downloadUrl = `https://download.gettrici.com/darwin-x64/Trici-${ver}-x64.dmg`;
+        window.open(downloadUrl, '_blank');
+    } else {
+        window.open('https://download.gettrici.com/darwin-x64/Trici-2.5.0-x64.dmg');
+    }    
   }
   return (
     <Layout>
