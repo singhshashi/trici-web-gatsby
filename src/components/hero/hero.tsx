@@ -109,6 +109,8 @@ const HeroContainer: React.FunctionComponent = () =>  {
     const spinnerContainerCssClass = mergeStyles({
         display: 'block',
     });
+    
+    const emailFieldDescription = `Only for sending product updates, feedback etc.`;
 
     return (
         <div className="section__hero">
@@ -131,7 +133,7 @@ const HeroContainer: React.FunctionComponent = () =>  {
                             <TextField label="Name" onGetErrorMessage={getNameValidationErrorMessage} required value={name} onChange={onChangeName} />
                         </Stack.Item>
                         <Stack.Item>
-                            <TextField label="Email" type="email" onGetErrorMessage={getEmailValidationErrorMessage} required value={email} onChange={onChangeEmail} />
+                            <TextField label="Email" type="email" onGetErrorMessage={getEmailValidationErrorMessage} required value={email} onChange={onChangeEmail} description={emailFieldDescription} />
                         </Stack.Item>
                         <Stack.Item>
                             <ChoiceGroup options={osChoiceGroupOptions} label="OS" required selectedKey={osSelected} onChange={onChangeOSSelected} />

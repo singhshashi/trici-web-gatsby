@@ -7,7 +7,7 @@ const HowItWorks: React.FunctionComponent = () => {
   const videoIFrameMarkup =`
       <iframe
         class="intro-vid"
-        src="https://www.youtube-nocookie.com/embed/OxRhcviTFaA?showinfo=0"
+        src="https://www.youtube-nocookie.com/embed/JTAiEWOzkWg?showinfo=0"
         frameborder="0"
         allow="autoplay; encrypted-media"
         allowfullscreen
