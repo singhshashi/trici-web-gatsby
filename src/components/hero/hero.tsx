@@ -158,7 +158,7 @@ const HeroContainer: React.FunctionComponent = () =>  {
                     <OutboundLink href="https://forms.zohopublic.in/gettrici/form/TriciDownloads/formperma/a3H9zdJkx7u6ZrSvnNDeIltYE4L2s-LQiAWzAoQt7xY?referrername=gettrici">Request Access | Download</OutboundLink>
                 </div> */}
             </div>
-            <p className="available-announcement">Desktop application available for MacOS and Ubuntu. Coming Soon for Windows<sup>*</sup></p>
+            <div className="available-announcement"> <p>Trici is a desktop application that helps developers regain lost productivity due interruptions and context switching, by reducing the time taken to recover your lost train of thought from 10 minutes or more to less than 2 minutes. Available for MacOS and Ubuntu. Coming Soon for Windows<sup>*</sup></p></div>
             </div>
             <img src="images/TriciHomeExplain.png" alt="Trici Main Screen" className="mainscreenshot" />
         </div>
