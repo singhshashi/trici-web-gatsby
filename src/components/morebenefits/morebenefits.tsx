@@ -30,7 +30,7 @@ const MoreBenefits: React.FunctionComponent = () => {
         </div>
         <div className="morebenefits-item">
           <FontIcon iconName="Hide2" className={iconClass} />
-          <Text as="h6" variant="large" block> Inactvity Detection</Text>
+          <Text as="h6" variant="large" block> Inactivity Detection</Text>
           <Text as="p" block>Automatically ends Focus Session if user is not active on the computer.</Text>
         </div>
       </div>

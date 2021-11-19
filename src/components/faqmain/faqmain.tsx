@@ -17,9 +17,8 @@ const FaqMain: React.FunctionComponent = () => {
           </Text>
           <Text as="p" block variant="medium">
             Trici is currently available for macOS (10.12 or higher) and Ubuntu
-            Linux(14.10 or higher). The system RAM should be 8 GB or more. For
-            macOS, Trici only supports the Intel chips architecture. Apple
-            Silicon support is in the works.
+            Linux(14.10 or higher). The system RAM should be 8 GB or more. For 
+            macOS, separate builds are available for Intel and Apple Silicon.
           </Text>
         </div>
         <div className="faqmain-item">
@@ -60,7 +59,7 @@ When viewing a recording in smart mode, the player plays at variable speeds, pla
            When will Trici be available for Windows?
           </Text>
           <Text as="p" block variant="medium">
-            A version that works on Windows is under development and expected to be available tentatively by December 5, 2021. Request Access and select your OS as Windows to expedite development of that version.
+            A version that works on Windows is under development and expected to be available tentatively by December 19, 2021. Request Access and select your OS as Windows to expedite development of that version.
           </Text>
         </div>
       </div>

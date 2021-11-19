@@ -97,7 +97,7 @@ const HeroContainer: React.FunctionComponent = () =>  {
     const boxShadowDefinition= '0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)';
 
     const heroButtonStyles = {
-        root: { height: 60, minWidth: 280, backgroundColor: '#fff', color:'#074b62', borderRadius: 5, boxShadow: boxShadowDefinition},
+        root: { height: 60, minWidth: 280, backgroundColor: '#fff', color:'#191970', borderRadius: 5, boxShadow: boxShadowDefinition},
         label: { fontSize: 18, fontWeight: 'bold' }
     }
 

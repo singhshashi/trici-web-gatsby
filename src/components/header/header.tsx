@@ -11,6 +11,7 @@ import { ThemeProvider } from "@fluentui/react-theme-provider"
 import "./header.css"
 
 const themeTriciDark = themes.themeTriciDark ;
+const themeBhor = themes.themeBhor;
 
 const Header: React.FunctionComponent = () => {
   const [menuVisible, setMenuVisible] = useState(false)

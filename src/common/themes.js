@@ -76,11 +76,37 @@ const myTheme = createTheme({
     neutralDark: '#201f1e',
     black: '#000000',
     white: '#ffffff',
-  },
-
+  }, 
 });
+const themeBhor = createTheme({
+  palette: {
+    themePrimary: '#191970',
+    themeLighterAlt: '#f2f2f9',
+    themeLighter: '#cbcbe8',
+    themeLight: '#a3a3d4',
+    themeTertiary: '#5a5aa9',
+    themeSecondary: '#292981',
+    themeDarkAlt: '#161665',
+    themeDark: '#131355',
+    themeDarker: '#0e0e3f',
+    neutralLighterAlt: '#faf9f8',
+    neutralLighter: '#f3f2f1',
+    neutralLight: '#edebe9',
+    neutralQuaternaryAlt: '#e1dfdd',
+    neutralQuaternary: '#d0d0d0',
+    neutralTertiaryAlt: '#c8c6c4',
+    neutralTertiary: '#95b495',
+    neutralSecondary: '#789b78',
+    neutralPrimaryAlt: '#5e835e',
+    neutralPrimary: '#112211',
+    neutralDark: '#325232',
+    black: '#203a20',
+    white: '#ffffff',
+  }});
+
     export const themes = {
         themeTriciDark: themeTriciDark,
         themeTriciLight: themeTriciLight,
+        themeBhor: themeBhor,
         themeFabricDefault: myTheme
     }
