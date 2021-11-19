@@ -24,7 +24,7 @@ const HowItWorks: React.FunctionComponent = () => {
 
       <div dangerouslySetInnerHTML={{ __html: vimeoEmbedMarkup }} />
 
-            <div className="available-announcement"> <p>Trici is a desktop application that helps developers regain lost productivity due interruptions and context switching. It reduces the time taken to recover your lost train of thought from 10 minutes or more to less than 2 minutes.</p></div>
+            <div className="howitworks-pitch"> <p>Trici is a desktop application that helps developers regain lost productivity due interruptions and context switching. It reduces the time taken to recover your lost train of thought from 10 minutes or more to less than 2 minutes.</p></div>
     </div>
   )
 }
