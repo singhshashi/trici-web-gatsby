@@ -187,10 +187,10 @@ const Download: React.FunctionComponent = () => {
                 <a href="/terms">Terms of Use</a> and{" "}
                 <a href="/privacy">privacy statement</a>.
               </Text>
-              <Text as="p" variant="small" block>
+              {/* <Text as="p" variant="small" block>
                 Mac and the Mac logo are trademarks of Apple Inc., registered in
                 the U.S. and other countries.
-              </Text>
+              </Text> */}
             </div>
           </div>
         </div>
