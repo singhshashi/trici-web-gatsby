@@ -1,0 +1,54 @@
+.downloadContainer {
+  text-align: center;
+}
+
+.downloadButtonsRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  flex-direction: column;
+}
+.downloadButtonsItem {
+  margin-top:10px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  margin:0 auto;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.downloadButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: center;
+  margin:0 auto;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.downloadButton {
+  padding: 5px 15px;
+  margin: 5px
+}
+
+.pageTitleContainer {
+  text-align: center;
+  margin-bottom: 70px;
+}
+.downloadTitle {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  font-weight: 500;
+  text-align: center;
+}
+.macos-logo {
+  margin: 0 auto;
+  max-height: 100px;
+  width: 100px;
+  margin-bottom: 30px;
+}
+.legalstuff {
+  margin-top: 70px;
+}

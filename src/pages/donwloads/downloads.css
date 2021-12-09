@@ -1,8 +1,8 @@
-.donwloadContainer {
+.downloadContainer {
   text-align: center;
 }
 
-.donwloadButtonContainer {
+.downloadButtonContainer {
   display: flex;
   flex-direction: row;
   align-items: center;

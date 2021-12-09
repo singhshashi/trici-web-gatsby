@@ -34,6 +34,9 @@ const getEmailValidationErrorMessage = (value) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? '' : 'Please enter a valid email';
 };
 
+const gotoDownloads = () => {
+    window.location.href = '/download';
+}
 const HeroContainer: React.FunctionComponent = () =>  {
     const [ hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
     const [ osSelected, setOSSelected ] = useState('');
@@ -47,7 +50,7 @@ const HeroContainer: React.FunctionComponent = () =>  {
     const onChangeName = useCallback((evt, newValue) => { setName(newValue); });
     const onChangeEmail = useCallback((evt, newValue) => { setEmail(newValue);});
     const onChangeOSSelected = useCallback((ev, option) => { setOSSelected(option.key)});
-    const onChangeInviteCode = useCallback((ev, newValue) => { setInviteCode(newValue);});
+    // const onChangeInviteCode = useCallback((ev, newValue) => { setInviteCode(newValue);});
 
     const submitForm = useCallback(() => {
         toggleShowSpinner();
@@ -120,7 +123,7 @@ const HeroContainer: React.FunctionComponent = () =>  {
                     <p className="byline">Record and recap your Focus Sessions and rebuild your lost train of thought in seconds!</p>
             </div>
             <div className="hero_cta">
-                <PrimaryButton text="Download for Free" onClick={toggleHideDialog} styles={heroButtonStyles} iconProps={{ iconName: "Installation" }} id="btnDownloadForFree" />
+                <PrimaryButton text="Download for Free" onClick={gotoDownloads} styles={heroButtonStyles} iconProps={{ iconName: "Installation" }} id="btnDownloadForFree" />
                 <Dialog
                     hidden={hideDialog}
                     onDismiss={toggleHideDialog}
