@@ -3,6 +3,7 @@ import "./morebenefits.css"
 import { Text } from "@fluentui/react"
 import { FontIcon } from "@fluentui/react/lib/Icon"
 import { mergeStyles } from "@fluentui/react/lib/Styling"
+import { PrimaryButton } from "@fluentui/react/lib/Button";
 
 const MoreBenefits: React.FunctionComponent = () => {
   const iconClass = mergeStyles({
@@ -11,6 +12,10 @@ const MoreBenefits: React.FunctionComponent = () => {
     width: 25,
     margin:'0 10px'
   });
+
+  const gotoDownloads = () => {
+    window.location.href="/download";
+  };
 
   return (
     <div className="morebenefits-container">
@@ -59,6 +64,7 @@ const MoreBenefits: React.FunctionComponent = () => {
           <Text as="p" block>Trici keeps a log of your daily work. Add tasks to your day plan, note down thoughts about the day.</Text>
         </div>
       </div>
+          <PrimaryButton text="Download for Free" onClick={gotoDownloads} iconProps={{ iconName: "Installation" }} id="btnDownloadForFree" />
     </div>
   )
 }

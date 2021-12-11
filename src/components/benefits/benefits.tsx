@@ -1,8 +1,13 @@
 import React from "react"
 import "./benefits.css"
 import { Text } from "@fluentui/react"
+import { PrimaryButton } from "@fluentui/react/lib/Button";
 
 const Benefits: React.FunctionComponent = () => {
+  const gotoDownloads = () => {
+    window.location.href = "/download";
+  }
+
   return (
     <div className="benefits-container">
       <Text as="h3" variant="xxLarge" block>
@@ -16,6 +21,7 @@ const Benefits: React.FunctionComponent = () => {
           <Text as="p" block variant="mediumPlus">
             Rebuild your train of thought in seconds by watching Smart Replay of your last focus session. No more switching between files in your editor or tabs in your browser to recollect your train of thought.
           </Text>
+          <PrimaryButton text="Download for Free" onClick={gotoDownloads} iconProps={{ iconName: "Installation" }} id="btnDownloadForFree" />
         </div>
         <div className="benefit-image-container">
           <img
@@ -36,6 +42,7 @@ const Benefits: React.FunctionComponent = () => {
           <Text as="p" block variant="mediumPlus">
             Having to switch between tasks often? With Trici, you can filter Focus Sessions by Task or date allowing you to recover your train of thought for a task you had to leave unfinished. Trici is a superpower for those who have to switch between tasks often.
           </Text>
+          <PrimaryButton text="Download for Free" onClick={gotoDownloads} iconProps={{ iconName: "Installation" }} id="btnDownloadForFree" />
         </div>
         <div className="benefit-image-container">
           <img
@@ -56,6 +63,7 @@ const Benefits: React.FunctionComponent = () => {
           <Text as="p" block variant="mediumPlus">
             Checking Twitter while your code builds? Block distracting websites when you start a Focus Session and don't break your train of thought in the first place.
           </Text>
+          <PrimaryButton text="Download for Free" onClick={gotoDownloads} iconProps={{ iconName: "Installation" }} id="btnDownloadForFree" />
         </div>
         <div className="benefit-image-container">
           <img
