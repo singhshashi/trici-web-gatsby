@@ -12,6 +12,7 @@ import { useBoolean } from '@fluentui/react-hooks';
 import { TextField } from '@fluentui/react/lib/TextField';
 import { ChoiceGroup } from '@fluentui/react/lib/ChoiceGroup';
 import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
+import HowItWorksShort from "../howitworks/howitworksshort";
 const axios = require('axios');
 
 const modalProps = {
@@ -119,8 +120,9 @@ const HeroContainer: React.FunctionComponent = () =>  {
         <div className="section__hero">
             <div className="hero_container">
             <div className="hero_pitch">
-                <h1><span className="highlight">Faster</span> Context Switching for Developers</h1>
-                    <p className="byline">Record and recap your Focus Sessions and rebuild your lost train of thought in seconds!</p>
+                <h1>Recover <span className="highlight">faster</span> from Interruptions</h1>
+                <p className="byline">Trici reduces the time it takes for a developer to recover from an interruption from an average 25 minutes to less than 2 minutes.</p>
+                    {/* <p className="byline">Record and recap your Focus Sessions and rebuild your lost train of thought in seconds!</p> */}
             </div>
             <div className="hero_cta">
                 <PrimaryButton text="Download for Free" onClick={gotoDownloads} styles={heroButtonStyles} iconProps={{ iconName: "Installation" }} id="btnDownloadForFree" />
@@ -163,7 +165,8 @@ const HeroContainer: React.FunctionComponent = () =>  {
             </div>
             <p className="available-announcement">Available for MacOS and Ubuntu. Coming Soon for Windows<sup>*</sup></p>
             </div>
-            <img src="images/TriciHomeExplain.png" alt="Trici Main Screen" className="mainscreenshot" />
+            {/* <HowItWorksShort /> */}
+            {/* <img src="images/TriciHomeExplain.png" alt="Trici Main Screen" className="mainscreenshot" /> */}
         </div>
     )
 }

@@ -144,7 +144,7 @@ const Download: React.FunctionComponent = () => {
                   >
                     .deb
                   </CompoundButton>
-                  <CompoundButton
+                  {/* <CompoundButton
                     primary
                     secondaryText="Red Hat, Fedora, SUSE"
                     iconProps={{ iconName: "Download" }}
@@ -152,7 +152,7 @@ const Download: React.FunctionComponent = () => {
                     onClick={() => downloadInstaller("rpm-x64")}
                   >
                     .rpm
-                  </CompoundButton>
+                  </CompoundButton> */}
                   <CompoundButton
                     primary
                     secondaryText="Any Linux"

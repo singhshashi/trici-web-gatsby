@@ -10,6 +10,7 @@ import Benefits from "../components/benefits/benefits"
 import Layout from "../components/layout/layout"
 import MoreBenefits from "../components/morebenefits/morebenefits"
 import FaqMain from "../components/faqmain/faqmain"
+// import ScreensCarousel  from "../components/screenscarousel/screenscarousel"
 import {Helmet} from 'react-helmet';
 
 const App: React.FunctionComponent = () => {
@@ -25,6 +26,7 @@ const App: React.FunctionComponent = () => {
       <Benefits />
       <MoreBenefits />
       <FaqMain />
+      {/* <ScreensCarousel /> */}
     </Layout>
   )
 }

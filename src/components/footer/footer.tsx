@@ -31,12 +31,9 @@ const Footer = () => {
         <div className="about">
           <Text as="h5" variant="large" block>About Trici</Text>
           <Text as="p" variant="mediumPlus" block>
-            Trici was built out of the frustration of lost productivity due to
-            interruptions, many of them genuine. I tried a bunch of tools and
-            techniques to improve my focus, but found them lacking in one
-            respect or another. Trici is an attempt to scratch that itch to Stay
-            in the Zone, more often. To experience the satisfaction of getting
-            things done.
+            Trici is a desktop application that that records your screen when you start a Focus Session. You set the context of the session by selecting the task you are working on. You can mark important moments during a session 
+            as well as take notes during or after the session. Thus you have a screen recording tied to the task you were working on as well as notes and important moments that you may have marked. You can use this as a memory aid 
+            to help you regain your train of thought after any interruption or otherwise.
           </Text>
         </div>
         <div className="links">

@@ -1,6 +1,5 @@
 import React from "react"
 import "./howitworks.css"
-import { FontSizes } from "@uifabric/fluent-theme/lib/fluent/FluentType"
 import { Stack, Text, PrimaryButton } from "@fluentui/react"
 
 const HowItWorks: React.FunctionComponent = () => {
