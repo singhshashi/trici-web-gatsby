@@ -2,12 +2,57 @@
 title: 'Changelog'
 description: 'Here you will find the detailed release notes including improvements, bug fixes, new features and more about the Trici desktop app.'
 keywords: 'Changelog, release notes, bug fixes'
-lastUpdatedDate: '05 Nov 2021'
+lastUpdatedDate: '21 Dec 2021'
 ---
-Version 2.5.0
+Version 2.7.0
 
 # Changelog
 Changes to Trici from 2.1.0 onwards.
+
+## [2.7.0] 2021-12-21
+
+### Added
+- Play sounds on different events such as Start of Session etc.
+- Settings page where user can select which sounds to play.
+
+### Fixed
+- Auto update was not working on Mac m1.
+
+### Changed
+- Removed native notifications to prompt user to start a Focus Session. Now prompting only with sounds.
+
+## [2.6.2] 2021-12-04
+
+### Added
+
+### Fixed
+- Updated color of splash screen to match color scheme of website.
+- Errors thrown during autoUpdate.
+
+### Changed
+- Changed position of Time since last session to be above the video.
+
+## [2.6.1] 2021-12-02
+
+### Added
+
+### Fixed
+- AutoUpdate was not working for Apple Silicon builds.
+
+### Changed
+
+## [2.6.0] 2021-11-21
+
+### Added
+- Added a menu item through which you can ask Trici to sleep and not prompt you to start a Sesion.
+
+
+### Fixed
+- Main Window was not getting focused on Command Tab.
+- App was crashing if Focus Session was started from the Menu.
+- Main window was not focused when a new session was started.
+
+### Changed
 
 ## [2.5.0] - 2021-11-05
 
