@@ -59,7 +59,7 @@ When viewing a recording in smart mode, the player plays at variable speeds, pla
            When will Trici be available for Windows?
           </Text>
           <Text as="p" block variant="medium">
-            A version that works on Windows is under development and expected to be available tentatively by January 14, 2022. Sign up to get notified when the build becomes available. 
+            A version that works on Windows is under development and expected to be available tentatively by May 25, 2022. Sign up to get notified when the build becomes available. 
           </Text>
         </div>
       </div>
