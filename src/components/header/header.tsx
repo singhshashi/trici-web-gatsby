@@ -27,15 +27,15 @@ const Header: React.FunctionComponent = () => {
               />
             </a>
           </div>
-          <div className="links">
-            {/* <Link href="/a-radical-new-approach-to-productivity" theme={themeTriciDark}>Why Trici?</Link> */}
-            {/* <Link>Pricing</Link> */}
+          {/* <div className="links">
+            <Link href="/a-radical-new-approach-to-productivity" theme={themeTriciDark}>Why Trici?</Link> 
+            <Link>Pricing</Link>
             <Link href="/docs/home" theme={themeTriciDark}>Docs</Link>
             <Link href="/blog" theme={themeTriciDark}>Blog</Link>
             <Link href="/changelog" theme={themeTriciDark}>Changelog</Link>
-          </div>
+          </div> */}
         </div>
-      <div className="headerCollapsed">
+      {/* <div className="headerCollapsed">
         <IconButton
           iconProps={{ iconName: "GlobalNavButton" }}
           onClick={() => {
@@ -65,7 +65,7 @@ const Header: React.FunctionComponent = () => {
             </li>
           </ul>
         </Panel>
-      </div>
+      </div> */}
     </div>
   )
 }

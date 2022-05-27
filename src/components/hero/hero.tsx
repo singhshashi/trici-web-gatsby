@@ -3,7 +3,6 @@ import "./hero.css"
 import Header from "../header/header"
 import { Customizations } from '@fluentui/react/lib/Utilities';
 import { themes } from '../../common/themes'
-import { FontSizes } from '@uifabric/fluent-theme/lib/fluent/FluentType';
 import { Stack, Text, MessageBar, MessageBarType, mergeStyles } from '@fluentui/react';
 import { Dialog, DialogType, DialogFooter } from '@fluentui/react/lib/Dialog';
 import { PrimaryButton, DefaultButton } from '@fluentui/react/lib/Button';
@@ -20,11 +19,24 @@ const modalProps = {
   topOffsetFixed: true,
 };
 
+
 const dialogContentProps = {
   type: DialogType.largeHeader,
-  title: 'Download | Request Access',
+  title: 'Get Download Link',
   closeButtonAriaLabel: 'Close',
 //   subText: 'Do you want to send this message without a subject?',
+};
+
+const macArchitectureSelectionModalProps = {
+    isBlocking: false,
+    topOffsetFixed: true,
+};
+
+
+const macArchitectureSelectionDialogProps = {
+    type: DialogType.largeHeader,
+    title: 'Select your architecture',
+    closeButtonAriaLabel: 'Close',
 };
 
 const getNameValidationErrorMessage = (value) => {
@@ -39,54 +51,11 @@ const gotoDownloads = () => {
     window.location.href = '/download';
 }
 
-function downloadInstaller(platform) {
-    console.log("Download Button was clicked")
-    console.log(platform)
-    let downloadUrl = ""
-    let willNavigate = false
-    switch (platform) {
-      case "Mac/iOS": {
-        downloadUrl = "/thank-you?platform=macos-x64"
-        willNavigate = true
-        break
-      }
-      case "Mac/iOS": {
-        downloadUrl = "/thank-you?platform=macos-arm64"
-        willNavigate = true
-        break
-      }
-      case "debian-x64": {
-        downloadUrl = "/thank-you?platform=debian-x64"
-        willNavigate = true
-        break
-      }
-      case "rpm-x64": {
-        downloadUrl = "/thank-you?platform=rpm-x64"
-        willNavigate = true
-        break
-      }
-      case "Linux": {
-        downloadUrl = "/thank-you?platform=linux-zip-x64"
-        willNavigate = true
-        break
-      }
-      case "Windows 10": {
-        downloadUrl = "/thank-you?platform=windows-x64"
-        willNavigate = true;
-        break
-      }
-      default: {
-        willNavigate = false
-        break
-      }
-    }
-    if (willNavigate) {
-      window.location.href = downloadUrl
-    }
-  }
+
 
 const HeroContainer: React.FunctionComponent = () =>  {
     const [ hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
+    const [ hideMacArchitectureSelectionDialog, { toggle: toggleHideMacArchitectureSelectionDialog }] = useBoolean(true);
     const [ osSelected, setOSSelected ] = useState('');
     const [ name, setName ] = useState('');
     const [ email, setEmail ] = useState('');
@@ -95,17 +64,6 @@ const HeroContainer: React.FunctionComponent = () =>  {
     const [ showSpinner, { toggle: toggleShowSpinner }] = useBoolean(false);
     const [ showError, {toggle: toggleShowError }] = useBoolean(false);
 
-    let OSName = "Unknown";
-    if (window.navigator.userAgent.indexOf("Windows NT 10.0")!= -1) OSName="Windows 10";
-    if (window.navigator.userAgent.indexOf("Windows NT 6.3") != -1) OSName="Windows 8.1";
-    if (window.navigator.userAgent.indexOf("Windows NT 6.2") != -1) OSName="Windows 8";
-    if (window.navigator.userAgent.indexOf("Windows NT 6.1") != -1) OSName="Windows 7";
-    if (window.navigator.userAgent.indexOf("Windows NT 6.0") != -1) OSName="Windows Vista";
-    if (window.navigator.userAgent.indexOf("Windows NT 5.1") != -1) OSName="Windows XP";
-    if (window.navigator.userAgent.indexOf("Windows NT 5.0") != -1) OSName="Windows 2000";
-    if (window.navigator.userAgent.indexOf("Mac")            != -1) OSName="Mac/iOS";
-    if (window.navigator.userAgent.indexOf("X11")            != -1) OSName="UNIX";
-    if (window.navigator.userAgent.indexOf("Linux")          != -1) OSName="Linux";
 
 
     const onChangeName = useCallback((evt, newValue) => { setName(newValue); });
@@ -113,6 +71,65 @@ const HeroContainer: React.FunctionComponent = () =>  {
     const onChangeOSSelected = useCallback((ev, option) => { setOSSelected(option.key)});
 
     // const onChangeInviteCode = useCallback((ev, newValue) => { setInviteCode(newValue);});
+    const getPlatform = () => {
+        let platform = "Unknown";
+        if (window.navigator.userAgent.indexOf("Windows") !== -1) platform = "Windows";
+        if (window.navigator.userAgent.indexOf("Mac")            != -1) platform="MacOS";
+        if (window.navigator.userAgent.indexOf("Linux")          != -1) platform="Linux";
+        
+        return platform;
+    }
+
+    const downloadInstaller = (platform) => {
+        console.log("Download Button was clicked")
+        console.log(platform)
+        let downloadUrl = ""
+        let willNavigate = false
+        switch (platform) {
+        case "macos-x64": {
+            downloadUrl = "/thank-you?platform=macos-x64"
+            willNavigate = true
+            break
+        }
+        case "macos-arm64": {
+            downloadUrl = "/thank-you?platform=macos-arm64"
+            willNavigate = true
+            break
+        }
+        case "debian-x64": {
+            downloadUrl = "/thank-you?platform=debian-x64"
+            willNavigate = true
+            break
+        }
+        case "rpm-x64": {
+            downloadUrl = "/thank-you?platform=rpm-x64"
+            willNavigate = true
+            break
+        }
+        case "Linux": {
+            downloadUrl = "/thank-you?platform=linux-zip-x64"
+            willNavigate = true
+            break
+        }
+        case "Windows": {
+            downloadUrl = "/thank-you?platform=windows-x64"
+            willNavigate = true;
+            break
+        }
+        default: {
+            willNavigate = false
+            break
+        }
+        }
+        if (false) {
+        window.location.href = downloadUrl
+        }
+    }
+
+    const emailDownloadLink = (OSName) => {
+        console.log("SHow form to email download link");
+        console.log("OSName: " + OSName);
+    }
 
     const submitForm = useCallback(() => {
         toggleShowSpinner();
@@ -139,6 +156,40 @@ const HeroContainer: React.FunctionComponent = () =>  {
         });
     });
 
+
+    const getCtaButtonText = () => {
+        const platform = getPlatform();
+        if (platform === 'MacOS') {
+            return 'Download for MacOS';
+        } else if (platform === 'Linux') {
+            return 'Download for Linux';
+        } else if (platform === 'Windows') {
+            return 'Download for Windows';
+        } else {
+            return 'Download for Free';
+        }
+    }
+
+    const handleDownloadClick = () => {
+        const isMobile = window.mobileCheck();
+        console.log("isMobile: " + isMobile);
+
+        if (!isMobile) {
+            const platform = getPlatform();
+            console.log(platform)
+            if (platform === 'MacOS') {
+                toggleHideMacArchitectureSelectionDialog();
+                // showMacChipsetChoice();
+            } else if (platform === 'Windows') {
+                downloadInstaller(platform);
+            } else if (platform === 'Linux') {
+                downloadInstaller(platform);
+            }
+        } else {
+            toggleHideDialog();
+        }
+    }
+
     useEffect(()=> {
         if (getNameValidationErrorMessage(name) === '' && getEmailValidationErrorMessage(email) === '' && osSelected !== '') {
             if (!formReady) {
@@ -162,13 +213,22 @@ const HeroContainer: React.FunctionComponent = () =>  {
     const boxShadowDefinition= '0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)';
 
     const heroButtonStyles = {
-        root: { height: 60, minWidth: 280, backgroundColor: '#fff', color:'#191970', borderRadius: 5, boxShadow: boxShadowDefinition},
-        label: { fontSize: 18, fontWeight: 'bold' }
+        root: { height: 80, minWidth: 320, backgroundColor: '#fff', color:'#191970', borderRadius: 5, boxShadow: boxShadowDefinition},
+        label: { fontSize: 24, fontWeight: 'bold' }
     }
 
+    const macArchitectureSelectionButtonStyles = {
+        root: { height: 40, minWidth: 180, borderRadius: 5, boxShadow: boxShadowDefinition},
+        label: { fontSize: 18, fontWeight: 'bold' }
+    }
     const verticalGapStackTokens = {
         childrenGap: 10,
         padding: 5
+    }
+
+    const macArchSelectionStackTokens = {
+        childrenGap: 20,
+        padding: 10
     }
 
     const spinnerContainerCssClass = mergeStyles({
@@ -177,16 +237,40 @@ const HeroContainer: React.FunctionComponent = () =>  {
     
     const emailFieldDescription = `Only for sending product updates, feedback etc.`;
 
+    
+    const ctaButtonText =  getCtaButtonText();
+
+
     return (
         <div className="section__hero">
             <div className="hero_container">
             <div className="hero_pitch">
-                <h1>Recover <span className="highlight">faster</span> from Interruptions</h1>
-                <p className="byline">Trici reduces the time it takes for a developer to recover from an interruption from an average 25 minutes to less than 2 minutes.</p>
+                <h1>Recover <span className="highlight">Faster</span> From Developer Interruptions</h1>
+            </div>
+            <div className="hero_byline_container">
+                <p className="byline">Trici is a productivity tool that helps developers recover from any interruption in less than 2 minutes!</p>
                     {/* <p className="byline">Record and recap your Focus Sessions and rebuild your lost train of thought in seconds!</p> */}
             </div>
             <div className="hero_cta">
-                <PrimaryButton text={ OSName } onClick={ () => downloadInstaller(OSName) } styles={heroButtonStyles} iconProps={{ iconName: "Installation" }} id="btnDownloadForFree" />
+                <PrimaryButton text={ctaButtonText} onClick={handleDownloadClick} styles={heroButtonStyles} iconProps={{ iconName: "Installation" }} id="btnDownloadForFree" />
+                <Dialog
+                    hidden={hideMacArchitectureSelectionDialog}
+                    onDismiss={toggleHideMacArchitectureSelectionDialog}
+                    modalProps={macArchitectureSelectionModalProps}
+                    dialogContentProps={macArchitectureSelectionDialogProps}
+                >
+                        <Stack tokens={macArchSelectionStackTokens}>
+                            <Stack.Item>
+                                <PrimaryButton onClick={() => downloadInstaller('macos-x64')} styles={macArchitectureSelectionButtonStyles} text="Intel x64"></PrimaryButton>
+                            </Stack.Item>
+                            <Stack.Item>
+                                <PrimaryButton onClick={() => downloadInstaller('macos-arm64')} styles={macArchitectureSelectionButtonStyles} text="Apple Silicon arm64"></PrimaryButton>
+                            </Stack.Item>
+                            <Stack.Item>
+
+                            </Stack.Item>
+                        </Stack>
+                </Dialog>
                 <Dialog
                     hidden={hideDialog}
                     onDismiss={toggleHideDialog}
@@ -224,7 +308,7 @@ const HeroContainer: React.FunctionComponent = () =>  {
                     <OutboundLink href="https://forms.zohopublic.in/gettrici/form/TriciDownloads/formperma/a3H9zdJkx7u6ZrSvnNDeIltYE4L2s-LQiAWzAoQt7xY?referrername=gettrici">Request Access | Download</OutboundLink>
                 </div> */}
             </div>
-            <p className="available-announcement">Available for MacOS and Ubuntu. Coming Soon for Windows<sup>*</sup></p>
+            {/* <p className="available-announcement">Available for MacOS and Ubuntu. Coming Soon for Windows<sup>*</sup></p> */}
             </div>
             {/* <HowItWorksShort /> */}
             {/* <img src="images/TriciHomeExplain.png" alt="Trici Main Screen" className="mainscreenshot" /> */}
