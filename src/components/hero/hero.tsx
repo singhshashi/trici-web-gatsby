@@ -38,6 +38,53 @@ const getEmailValidationErrorMessage = (value) => {
 const gotoDownloads = () => {
     window.location.href = '/download';
 }
+
+function downloadInstaller(platform) {
+    console.log("Download Button was clicked")
+    console.log(platform)
+    let downloadUrl = ""
+    let willNavigate = false
+    switch (platform) {
+      case "Mac/iOS": {
+        downloadUrl = "/thank-you?platform=macos-x64"
+        willNavigate = true
+        break
+      }
+      case "Mac/iOS": {
+        downloadUrl = "/thank-you?platform=macos-arm64"
+        willNavigate = true
+        break
+      }
+      case "debian-x64": {
+        downloadUrl = "/thank-you?platform=debian-x64"
+        willNavigate = true
+        break
+      }
+      case "rpm-x64": {
+        downloadUrl = "/thank-you?platform=rpm-x64"
+        willNavigate = true
+        break
+      }
+      case "Linux": {
+        downloadUrl = "/thank-you?platform=linux-zip-x64"
+        willNavigate = true
+        break
+      }
+      case "Windows 10": {
+        downloadUrl = "/thank-you?platform=windows-x64"
+        willNavigate = true;
+        break
+      }
+      default: {
+        willNavigate = false
+        break
+      }
+    }
+    if (willNavigate) {
+      window.location.href = downloadUrl
+    }
+  }
+
 const HeroContainer: React.FunctionComponent = () =>  {
     const [ hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
     const [ osSelected, setOSSelected ] = useState('');
@@ -48,9 +95,23 @@ const HeroContainer: React.FunctionComponent = () =>  {
     const [ showSpinner, { toggle: toggleShowSpinner }] = useBoolean(false);
     const [ showError, {toggle: toggleShowError }] = useBoolean(false);
 
+    let OSName = "Unknown";
+    if (window.navigator.userAgent.indexOf("Windows NT 10.0")!= -1) OSName="Windows 10";
+    if (window.navigator.userAgent.indexOf("Windows NT 6.3") != -1) OSName="Windows 8.1";
+    if (window.navigator.userAgent.indexOf("Windows NT 6.2") != -1) OSName="Windows 8";
+    if (window.navigator.userAgent.indexOf("Windows NT 6.1") != -1) OSName="Windows 7";
+    if (window.navigator.userAgent.indexOf("Windows NT 6.0") != -1) OSName="Windows Vista";
+    if (window.navigator.userAgent.indexOf("Windows NT 5.1") != -1) OSName="Windows XP";
+    if (window.navigator.userAgent.indexOf("Windows NT 5.0") != -1) OSName="Windows 2000";
+    if (window.navigator.userAgent.indexOf("Mac")            != -1) OSName="Mac/iOS";
+    if (window.navigator.userAgent.indexOf("X11")            != -1) OSName="UNIX";
+    if (window.navigator.userAgent.indexOf("Linux")          != -1) OSName="Linux";
+
+
     const onChangeName = useCallback((evt, newValue) => { setName(newValue); });
     const onChangeEmail = useCallback((evt, newValue) => { setEmail(newValue);});
     const onChangeOSSelected = useCallback((ev, option) => { setOSSelected(option.key)});
+
     // const onChangeInviteCode = useCallback((ev, newValue) => { setInviteCode(newValue);});
 
     const submitForm = useCallback(() => {
@@ -125,7 +186,7 @@ const HeroContainer: React.FunctionComponent = () =>  {
                     {/* <p className="byline">Record and recap your Focus Sessions and rebuild your lost train of thought in seconds!</p> */}
             </div>
             <div className="hero_cta">
-                <PrimaryButton text="Download for Free" onClick={gotoDownloads} styles={heroButtonStyles} iconProps={{ iconName: "Installation" }} id="btnDownloadForFree" />
+                <PrimaryButton text={ OSName } onClick={ () => downloadInstaller(OSName) } styles={heroButtonStyles} iconProps={{ iconName: "Installation" }} id="btnDownloadForFree" />
                 <Dialog
                     hidden={hideDialog}
                     onDismiss={toggleHideDialog}
