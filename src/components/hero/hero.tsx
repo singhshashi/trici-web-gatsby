@@ -14,6 +14,8 @@ import { Spinner, SpinnerSize } from '@fluentui/react/lib/Spinner';
 import HowItWorksShort from "../howitworks/howitworksshort";
 const axios = require('axios');
 
+const isBrowser = typeof window !== 'undefined';
+
 const modalProps = {
   isBlocking: true,
   topOffsetFixed: true,
@@ -73,9 +75,11 @@ const HeroContainer: React.FunctionComponent = () =>  {
     // const onChangeInviteCode = useCallback((ev, newValue) => { setInviteCode(newValue);});
     const getPlatform = () => {
         let platform = "Unknown";
-        if (window.navigator.userAgent.indexOf("Windows") !== -1) platform = "Windows";
-        if (window.navigator.userAgent.indexOf("Mac")            != -1) platform="MacOS";
-        if (window.navigator.userAgent.indexOf("Linux")          != -1) platform="Linux";
+        if (isBrowser) {
+            if (window.navigator.userAgent.indexOf("Windows") !== -1) platform = "Windows";
+            if (window.navigator.userAgent.indexOf("Mac") != -1) platform="MacOS";
+            if (window.navigator.userAgent.indexOf("Linux") != -1) platform="Linux";
+        }
         
         return platform;
     }
@@ -158,15 +162,20 @@ const HeroContainer: React.FunctionComponent = () =>  {
 
 
     const getCtaButtonText = () => {
-        const platform = getPlatform();
-        if (platform === 'MacOS') {
-            return 'Download for MacOS';
-        } else if (platform === 'Linux') {
-            return 'Download for Linux';
-        } else if (platform === 'Windows') {
-            return 'Download for Windows';
+        const isMobile = window.mobileCheck();
+        if (isMobile) {
+            return "Get Download Link";
         } else {
-            return 'Download for Free';
+            const platform = getPlatform();
+            if (platform === 'MacOS') {
+                return 'Download for MacOS';
+            } else if (platform === 'Linux') {
+                return 'Download for Linux';
+            } else if (platform === 'Windows') {
+                return 'Download for Windows';
+            } else {
+                return 'Download for Free';
+            }
         }
     }
 
