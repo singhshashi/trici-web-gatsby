@@ -101,7 +101,10 @@ const ThankYou: React.FunctionComponent = () => {
           window.location = response.data.downloadLink
         } else {
           setDownloadUrl(getDefaultDownloadLinkForPlatform(platform))
-          window.location = getDefaultDownloadLinkForPlatform(platform)
+          const defaultDownloadLink = getDefaultDownloadLinkForPlatform(platform);
+          if (defaultDownloadLink !== "unknown") {
+            window.location = getDefaultDownloadLinkForPlatform(platform)
+          }
         }
       })
       .catch(err => {
