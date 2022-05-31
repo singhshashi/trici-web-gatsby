@@ -26,7 +26,7 @@ const HowItWorks: React.FunctionComponent = () => {
 
   
 
-            {/* <div className="howitworks-pitch"> <p>Trici is a desktop application that records your screen activity during a Focus Session and replays it at high speed to help you remember faster.</p></div> */}
+            <div className="howitworks-pitch"> <p>Trici is a desktop application that records your screen activity during a Focus Session and replays it at high speed to help you remember faster.</p></div>
     </div>
   )
 }
