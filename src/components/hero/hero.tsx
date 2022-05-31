@@ -132,7 +132,7 @@ const HeroContainer: React.FunctionComponent = () =>  {
         }
         if (willNavigate) {
             console.log("Will Navitage to: " + downloadUrl)
-            // window.location.href = downloadUrl
+            window.location.href = downloadUrl
         }
     }
 
