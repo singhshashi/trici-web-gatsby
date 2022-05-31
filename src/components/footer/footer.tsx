@@ -46,6 +46,9 @@ const Footer = () => {
                 <Stack.Item>
                   <Link href="/docs" theme={themes.themeTriciDark}>Docs</Link>
                 </Stack.Item>
+                <Stack.Item>
+                  <Link href="/changelog" theme={themes.themeTriciDark}>Changelog</Link>
+                </Stack.Item>
               </Stack>
           </Stack.Item>
             <Stack.Item>

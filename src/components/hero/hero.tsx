@@ -130,8 +130,8 @@ const HeroContainer: React.FunctionComponent = () =>  {
             break
         }
         }
-        if (false) {
-        window.location.href = downloadUrl
+        if (willNavigate) {
+            window.location.href = downloadUrl
         }
     }
 
@@ -166,27 +166,27 @@ const HeroContainer: React.FunctionComponent = () =>  {
     });
 
 
-    const getCtaButtonText = () => {
-        let isMobile = false;
-        if (isBrowser) {
-            isMobile = window.mobileCheck();
-        }
+    // const getCtaButtonText = () => {
+    //     let isMobile = false;
+    //     if (isBrowser) {
+    //         isMobile = window.mobileCheck();
+    //     }
 
-        if (isMobile) {
-            return "Get Download Link";
-        } else {
-            const platform = getPlatform();
-            if (platform === 'MacOS') {
-                return 'Download for MacOS';
-            } else if (platform === 'Linux') {
-                return 'Download for Linux';
-            } else if (platform === 'Windows') {
-                return 'Download for Windows';
-            } else {
-                return 'Download for Free';
-            }
-        }
-    }
+    //     if (isMobile) {
+    //         return "Get Download Link";
+    //     } else {
+    //         const platform = getPlatform();
+    //         if (platform === 'MacOS') {
+    //             return 'Download for MacOS';
+    //         } else if (platform === 'Linux') {
+    //             return 'Download for Linux';
+    //         } else if (platform === 'Windows') {
+    //             return 'Download for Windows';
+    //         } else {
+    //             return 'Download for Free';
+    //         }
+    //     }
+    // }
 
     const handleDownloadClick = () => {
         const isMobile = window.mobileCheck();
@@ -326,7 +326,6 @@ const HeroContainer: React.FunctionComponent = () =>  {
                     <OutboundLink href="https://forms.zohopublic.in/gettrici/form/TriciDownloads/formperma/a3H9zdJkx7u6ZrSvnNDeIltYE4L2s-LQiAWzAoQt7xY?referrername=gettrici">Request Access | Download</OutboundLink>
                 </div> */}
             </div>
-            
             <p className="available-announcement">Available for MacOS and Ubuntu. Coming Soon for Windows<sup>*</sup></p>
             </div>
             {/* <HowItWorksShort /> */}
