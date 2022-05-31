@@ -24,9 +24,7 @@ const HowItWorks: React.FunctionComponent = () => {
 
       <div dangerouslySetInnerHTML={{ __html: vimeoEmbedMarkup }} className="pitchvid-container" />
 
-      <div className="howitworks-content">
-        <img src="https://cdn.gettrici.com/dev_interruptions_recovery.png" alt="interruptions" className="howitworks-img" />
-      </div>
+  
 
             {/* <div className="howitworks-pitch"> <p>Trici is a desktop application that records your screen activity during a Focus Session and replays it at high speed to help you remember faster.</p></div> */}
     </div>

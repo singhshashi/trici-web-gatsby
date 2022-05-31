@@ -19,49 +19,49 @@ const MoreBenefits: React.FunctionComponent = () => {
 
   return (
     <div className="morebenefits-container">
-      <Text as="h3" block variant="xxLarge">
+      <Text as="h3" block variant="xxLargePlus">
         More reasons why you will love Trici
       </Text>
       <div className="morebenefits-row">
         <div className="morebenefits-item">
           <FontIcon iconName="ThisPC" className={iconClass} />
-          <Text as="h6" variant="large" block>Privacy Guaranteed</Text>
-          <Text as="p" block>No registration needed. All data resides on your computer.</Text>
+          <Text as="h6" variant="xLarge" block>Privacy Guaranteed</Text>
+          <Text as="p" variant="mediumPlus" block>No registration needed. All data resides on your computer.</Text>
         </div>
         <div className="morebenefits-item">
           <FontIcon iconName="PlaybackRate1x" className={iconClass} />
-          <Text as="h6" variant="large" block> Smart Replay</Text>
-          <Text as="p" block>Replays session video at variable high speeds. 6x speed when you were active, 20x when you were inactive.</Text>
+          <Text as="h6" variant="xLarge" block> Smart Replay</Text>
+          <Text as="p" variant="mediumPlus" block>Replays session video at variable high speeds. 6x speed when you were active, 20x when you were inactive.</Text>
         </div>
         <div className="morebenefits-item">
           <FontIcon iconName="Hide2" className={iconClass} />
-          <Text as="h6" variant="large" block> Inactivity Detection</Text>
-          <Text as="p" block>Automatically ends Focus Session if user is not active on the computer.</Text>
+          <Text as="h6" variant="xLarge" block> Inactivity Detection</Text>
+          <Text as="p" variant="mediumPlus" block>Automatically ends Focus Session if user is not active on the computer.</Text>
         </div>
       </div>
       <div className="morebenefits-row">
         <div className="morebenefits-item">
           <FontIcon iconName="Timer" className={iconClass} />
-          <Text as="h6" variant="large" block> Track Focus Time</Text>
-          <Text as="p" block>Tasks completed, lines of code committed can vary between days. Hours focused every day is a consistent metric to track across days.</Text>
+          <Text as="h6" variant="xLarge" block> Track Focus Time</Text>
+          <Text as="p" variant="mediumPlus" block>Tasks completed, lines of code committed can vary between days. Hours focused every day is a consistent metric to track across days.</Text>
         </div>
 
         <div className="morebenefits-item">
           <FontIcon iconName="Annotation" className={iconClass} />
-          <Text as="h6" variant="large" block>Annotate and Search Sessions</Text>
-          <Text as="p" block>Annotate moments of a Focus Session, like spotting a bug. Search annotations across sessions.</Text>
+          <Text as="h6" variant="xLarge" block>Annotate and Search Sessions</Text>
+          <Text as="p" variant="mediumPlus" block>Annotate moments of a Focus Session, like spotting a bug. Search annotations across sessions.</Text>
         </div>
         <div className="morebenefits-item">
           <FontIcon iconName="HardDrive" className={iconClass} />
-          <Text as="h6" variant="large" block> Disk Space Management</Text>
-          <Text as="p" block>Choose how much space should recordings occupy before they start getting purged.</Text>
+          <Text as="h6" variant="xLarge" block> Disk Space Management</Text>
+          <Text as="p" variant="mediumPlus" block>Choose how much space should recordings occupy before they start getting purged.</Text>
         </div>
       </div>
       <div className="morebenefits-row">
         <div className="morebenefits-item">
           <FontIcon iconName="AddNotes" className={iconClass} />
-          <Text as="h6" variant="large" block>Automatic Daily Work Log</Text>
-          <Text as="p" block>Trici keeps a log of your daily work. Add tasks to your day plan, note down thoughts about the day.</Text>
+          <Text as="h6" variant="xLarge" block>Automatic Daily Work Log</Text>
+          <Text as="p" variant="mediumPlus" block>Trici keeps a log of your daily work. Add tasks to your day plan, note down thoughts about the day.</Text>
         </div>
       </div>
           <PrimaryButton text="Download for Free" onClick={gotoDownloads} iconProps={{ iconName: "Installation" }} id="btnDownloadForFree" />

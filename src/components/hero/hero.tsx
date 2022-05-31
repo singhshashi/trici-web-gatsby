@@ -39,6 +39,11 @@ const macArchitectureSelectionDialogProps = {
     type: DialogType.largeHeader,
     title: 'Select your architecture',
     closeButtonAriaLabel: 'Close',
+    styles: {
+        header: {
+            textAlign: 'center',
+        }
+    }
 };
 
 const getNameValidationErrorMessage = (value) => {
@@ -162,7 +167,11 @@ const HeroContainer: React.FunctionComponent = () =>  {
 
 
     const getCtaButtonText = () => {
-        const isMobile = window.mobileCheck();
+        let isMobile = false;
+        if (isBrowser) {
+            isMobile = window.mobileCheck();
+        }
+
         if (isMobile) {
             return "Get Download Link";
         } else {
@@ -227,7 +236,7 @@ const HeroContainer: React.FunctionComponent = () =>  {
     }
 
     const macArchitectureSelectionButtonStyles = {
-        root: { height: 40, minWidth: 180, borderRadius: 5, boxShadow: boxShadowDefinition},
+        root: { height: 40, minWidth: 250, borderRadius: 5, boxShadow: boxShadowDefinition},
         label: { fontSize: 18, fontWeight: 'bold' }
     }
     const verticalGapStackTokens = {
@@ -247,7 +256,7 @@ const HeroContainer: React.FunctionComponent = () =>  {
     const emailFieldDescription = `Only for sending product updates, feedback etc.`;
 
     
-    const ctaButtonText =  getCtaButtonText();
+    const ctaButtonText =  "Download for Free"; //getCtaButtonText();
 
 
     return (
@@ -317,7 +326,8 @@ const HeroContainer: React.FunctionComponent = () =>  {
                     <OutboundLink href="https://forms.zohopublic.in/gettrici/form/TriciDownloads/formperma/a3H9zdJkx7u6ZrSvnNDeIltYE4L2s-LQiAWzAoQt7xY?referrername=gettrici">Request Access | Download</OutboundLink>
                 </div> */}
             </div>
-            {/* <p className="available-announcement">Available for MacOS and Ubuntu. Coming Soon for Windows<sup>*</sup></p> */}
+            
+            <p className="available-announcement">Available for MacOS and Ubuntu. Coming Soon for Windows<sup>*</sup></p>
             </div>
             {/* <HowItWorksShort /> */}
             {/* <img src="images/TriciHomeExplain.png" alt="Trici Main Screen" className="mainscreenshot" /> */}
