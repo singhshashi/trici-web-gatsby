@@ -136,10 +136,10 @@ const HeroContainer: React.FunctionComponent = () =>  {
         }
     }
 
-    const emailDownloadLink = (OSName) => {
-        console.log("SHow form to email download link");
-        console.log("OSName: " + OSName);
-    }
+    // const emailDownloadLink = (OSName) => {
+    //     console.log("SHow form to email download link");
+    //     console.log("OSName: " + OSName);
+    // }
 
     const submitForm = useCallback(() => {
         toggleShowSpinner();

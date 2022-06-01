@@ -1,19 +1,19 @@
 import React from "react"
-import { Stack, Text, Link, FontWeights } from "@fluentui/react"
+import { PrimaryButton } from "@fluentui/react"
 import { Image, ImageFit } from "@fluentui/react/lib/Image"
 import "./index.css"
 import Hero from "../components/hero/hero"
-import { loadTheme } from "@fluentui/react/lib/Styling"
+import { loadTheme, mergeStyleSets } from "@fluentui/react/lib/Styling"
 import { themes } from "../common/themes"
 import HowItWorks from "../components/howitworks/howitworks"
 import Benefits from "../components/benefits/benefits"
 import Layout from "../components/layout/layout"
 import MoreBenefits from "../components/morebenefits/morebenefits"
-import DevInterruptionGraph from "../components/devinterruptiongraph/devinterruptiongraph"
 import FaqMain from "../components/faqmain/faqmain"
-// import ScreensCarousel  from "../components/screenscarousel/screenscarousel"
+import ScreensCarousel  from "../components/screenscarousel/screenscarousel"
 import {Helmet} from 'react-helmet';
 const isBrowser = typeof window !== 'undefined';
+
 if (isBrowser) {
   window.mobileCheck = function() {
     let check = false;
@@ -22,6 +22,31 @@ if (isBrowser) {
   };
 }
 const App: React.FunctionComponent = () => {
+  
+  const gotoDownloads = () => {
+    window.location.href = "/download";
+  }
+
+  const downloadButtonStyles = {
+    root: {
+      width: 300,
+      height: 70,
+      borderRadius: 5,
+    },
+    label: {
+      fontSize: 22,
+    }
+  }
+
+  const appStyles = mergeStyleSets({
+    lastDownloadButtonContainer: {
+      margin: '0 auto',
+      // backgroundColor: '#eebf3f',
+      textAlign: 'center',
+      padding:'15px'
+    }
+  });
+
   return (
     <Layout>
     <Helmet>
@@ -35,6 +60,9 @@ const App: React.FunctionComponent = () => {
       <MoreBenefits />
       <FaqMain />
       {/* <ScreensCarousel /> */}
+      <div className={appStyles.lastDownloadButtonContainer}>
+        <PrimaryButton text="Download for Free" onClick={gotoDownloads} iconProps={{ iconName: "Installation" }} styles={downloadButtonStyles} id="btnDownloadForFree" />    
+      </div>
     </Layout>
   )
 }

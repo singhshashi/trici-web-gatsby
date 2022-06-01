@@ -19,23 +19,23 @@ module.exports = {
       },
     },
     "gatsby-transformer-remark",
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [
-          "UA-77981996-1",
-        ],
-        gtagConfig: {
-          anonymize_ip: true,
-          cookie_expires: 0,
-        },
-        pluginConfig: {
-          head: true,
-          respectDNT: true,
-          exclude: [],
-        }
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-gtag`,
+    //   options: {
+    //     trackingIds: [
+    //       "UA-77981996-1",
+    //     ],
+    //     gtagConfig: {
+    //       anonymize_ip: true,
+    //       cookie_expires: 0,
+    //     },
+    //     pluginConfig: {
+    //       head: true,
+    //       respectDNT: true,
+    //       exclude: [],
+    //     }
+    //   }
+    // },
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {

@@ -23,10 +23,7 @@ const HowItWorks: React.FunctionComponent = () => {
 
 
       <div dangerouslySetInnerHTML={{ __html: vimeoEmbedMarkup }} className="pitchvid-container" />
-
-  
-
-            <div className="howitworks-pitch"> <p>Trici is a desktop application that records your screen activity during a Focus Session and replays it at high speed to help you remember faster.</p></div>
+            <div className="howitworks-pitch"> <Text as="p" variant="large">Trici is a desktop application that records your screen activity during a Focus Session and replays it at high speed to help you remember faster.</Text></div>
     </div>
   )
 }

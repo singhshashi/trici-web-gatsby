@@ -1,10 +1,11 @@
 .morebenefits-container {
   text-align: center;
+  padding-top: 20px;
 }
 
 .morebenefits-container > h3 {
   /* color: #292981; */
-  font-size: 24px;
+  /* font-size: 24px; */
 }
 
 .morebenefits-row {
