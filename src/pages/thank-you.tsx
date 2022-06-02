@@ -93,12 +93,17 @@ const ThankYou: React.FunctionComponent = () => {
     const urlSearchParams = new URLSearchParams(window.location.search)
     const platform = urlSearchParams.get("platform")
     setPlatform(platform)
+    console.log("platform:", platform);
     axios
       .get(`https://api.gettrici.com/getDownloadLink?platform=${platform}`)
       .then(response => {
         if (response.data.success) {
           setDownloadUrl(response.data.downloadLink)
-          window.location = response.data.downloadLink
+          if (response.data.downloadLink === "notfound") {
+            setDownloadUrl(getDefaultDownloadLinkForPlatform(platform))
+          } else {
+            window.location = response.data.downloadLink
+          }
         } else {
           setDownloadUrl(getDefaultDownloadLinkForPlatform(platform))
           const defaultDownloadLink = getDefaultDownloadLinkForPlatform(platform);
