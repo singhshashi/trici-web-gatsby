@@ -12,6 +12,7 @@ import MoreBenefits from "../components/morebenefits/morebenefits"
 import FaqMain from "../components/faqmain/faqmain"
 import ScreensCarousel  from "../components/screenscarousel/screenscarousel"
 import {Helmet} from 'react-helmet';
+import DownloadButton from "../components/shared/DownloadButton"
 const isBrowser = typeof window !== 'undefined';
 
 if (isBrowser) {
@@ -61,7 +62,8 @@ const App: React.FunctionComponent = () => {
       <FaqMain />
       {/* <ScreensCarousel /> */}
       <div className={appStyles.lastDownloadButtonContainer}>
-        <PrimaryButton text="Download for Free" onClick={gotoDownloads} iconProps={{ iconName: "Installation" }} styles={downloadButtonStyles} id="btnDownloadForFree" />    
+        <DownloadButton hero={false} />
+        {/* <PrimaryButton text="Download for Free" onClick={gotoDownloads} iconProps={{ iconName: "Installation" }} styles={downloadButtonStyles} id="btnDownloadForFree" />     */}
       </div>
     </Layout>
   )

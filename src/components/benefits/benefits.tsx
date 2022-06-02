@@ -2,6 +2,7 @@ import React from "react"
 import "./benefits.css"
 import { Text } from "@fluentui/react"
 import { PrimaryButton } from "@fluentui/react/lib/Button";
+import DownloadButton from "../shared/DownloadButton";
 
 const Benefits: React.FunctionComponent = () => {
   const gotoDownloads = () => {
@@ -89,7 +90,8 @@ const Benefits: React.FunctionComponent = () => {
       <br />
       <br />
       <br />
-      <PrimaryButton text="Download for Free" onClick={gotoDownloads} iconProps={{ iconName: "Installation" }} styles={downloadButtonStyles} id="btnDownloadForFree" />    
+      <DownloadButton hero={false} />
+      {/* <PrimaryButton text="Download for Free" onClick={gotoDownloads} iconProps={{ iconName: "Installation" }} styles={downloadButtonStyles} id="btnDownloadForFree" />     */}
     </div>
   )
 }
