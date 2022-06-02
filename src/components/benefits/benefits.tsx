@@ -36,7 +36,7 @@ const Benefits: React.FunctionComponent = () => {
         <div className="benefit-image-container">
           <img
             alt="benefit"
-            src="https://cdn.gettrici.com/dev_interruptions_recovery.png"
+            src="/images/dev_interruptions_recovery.webp"
             className="devinterruptiongraph-image"
           />
           <Text as="p" block variant="medium">
