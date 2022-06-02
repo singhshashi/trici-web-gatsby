@@ -37,7 +37,7 @@ const Benefits: React.FunctionComponent = () => {
           <img
             alt="benefit"
             src="/images/dev_interruptions_recovery.webp"
-            className="devinterruptiongraph-image"
+            className="benefit-image"
           />
           <Text as="p" block variant="medium">
             Time taken to recover to core productivity after an interruption. 
