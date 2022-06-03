@@ -15,6 +15,7 @@ export default function HTML(props) {
           rel="stylesheet"
           href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"
         />
+        <script src="https://www.googleoptimize.com/optimize.js?id=GTM-T74JN55"></script>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
