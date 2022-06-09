@@ -56,6 +56,7 @@ const DownloadButton: React.FunctionComponent = (props) => {
 
     const [ hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
     const [ hideMacArchitectureSelectionDialog, { toggle: toggleHideMacArchitectureSelectionDialog }] = useBoolean(true);
+    const [ directDownloadAllowed, { toggle: toggleDirectDownloadAllowed }] = useBoolean(false);
     const [ osSelected, setOSSelected ] = useState('');
     const [ name, setName ] = useState('');
     const [ email, setEmail ] = useState('');
@@ -96,6 +97,15 @@ const DownloadButton: React.FunctionComponent = (props) => {
     });
 
 
+    useEffect(()=> {
+        console.log("Inside useEffect to set directDownloadAllowed");
+        const urlSearchParams = new URLSearchParams(window.location.search)
+        const ref = urlSearchParams.get("ref")
+        if (ref === "hn" && !directDownloadAllowed) {
+            toggleDirectDownloadAllowed();
+            console.log("directDownloadAllowed:", directDownloadAllowed);
+        }
+    });
 
     useEffect(()=> {
         if (getNameValidationErrorMessage(name) === '' && getEmailValidationErrorMessage(email) === '' && osSelected !== '') {
@@ -181,7 +191,7 @@ const DownloadButton: React.FunctionComponent = (props) => {
         const isMobile = window.mobileCheck();
         console.log("isMobile: " + isMobile);
 
-        if (!isMobile) {
+        if (!isMobile && directDownloadAllowed) {
             const platform = getPlatform();
             console.log(platform)
             if (platform === 'MacOS') {
