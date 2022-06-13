@@ -10,6 +10,7 @@ import {
   MessageBarType,
   mergeStyles,
   PrimaryButton,
+  WindowProvider,
 } from "@fluentui/react"
 import { Spinner, SpinnerSize } from "@fluentui/react/lib/Spinner"
 import { Image, ImageFit } from "@fluentui/react/lib/Image"
@@ -20,12 +21,14 @@ const axios = require("axios")
 
 const ThankYou: React.FunctionComponent = () => {
   const [platform, setPlatform] = useState("")
+  
   const [downloadUrl, setDownloadUrl] = useState("")
   const [downloadSuccessMessageBar, setDownloadSuccessMessageBar] = useState(
     false
   )
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
+  const [showSignUp, { toggle: toggleShowSignUp }] = useBoolean(false)
   const [formReady, { toggle: toggleFormReady }] = useBoolean(false)
   const [showSpinner, { toggle: toggleShowSpinner }] = useBoolean(false)
   const [showError, { toggle: toggleShowError }] = useBoolean(false)
@@ -92,7 +95,13 @@ const ThankYou: React.FunctionComponent = () => {
   useEffect(() => {
     const urlSearchParams = new URLSearchParams(window.location.search)
     const platform = urlSearchParams.get("platform")
+    const showSignUp = urlSearchParams.get("showSignUp") === "true"
+    if (showSignUp) {
+      toggleShowSignUp()
+    } 
     setPlatform(platform)
+    const isMobile = window.mobileCheck();
+    console.log("isMobile: " + isMobile);
     console.log("platform:", platform);
     axios
       .get(`https://api.gettrici.com/getDownloadLink?platform=${platform}`)
@@ -102,12 +111,14 @@ const ThankYou: React.FunctionComponent = () => {
           if (response.data.downloadLink === "notfound") {
             setDownloadUrl(getDefaultDownloadLinkForPlatform(platform))
           } else {
-            window.location = response.data.downloadLink
+            if (!isMobile) {
+              window.location = response.data.downloadLink
+            }
           }
         } else {
           setDownloadUrl(getDefaultDownloadLinkForPlatform(platform))
           const defaultDownloadLink = getDefaultDownloadLinkForPlatform(platform);
-          if (defaultDownloadLink !== "unknown") {
+          if (defaultDownloadLink !== "unknown" && !isMobile) {
             window.location = getDefaultDownloadLinkForPlatform(platform)
           }
         }
@@ -197,15 +208,34 @@ const ThankYou: React.FunctionComponent = () => {
   })
   const foundPlatform = getFoundPlatform(platform)
 
+  const isMobile = window.mobileCheck();
+
+  console.log("isMobile: " + isMobile);
   let downloadSuccessMessageBarPartial = (
     <div>
-      <Text as="p" variant="xLarge" block>
-        Thank you for downloading Trici for {foundPlatform}!
-      </Text>
-      <Text as="p" variant="large" block>
-        Download not starting?{" "}
-        <Link href={downloadUrl}>Try this direct download link.</Link>
-      </Text>
+      {!isMobile && (
+        <>
+          <Text as="p" variant="xLarge" block>
+            Thank you for downloading Trici for {foundPlatform}!
+          </Text>
+          <Text as="p" variant="large" block>
+            Download not starting?{" "}
+            <Link href={downloadUrl}>Try this direct download link.</Link>
+          </Text>
+        </>
+        
+      )}
+      {isMobile && (
+        <>
+          <Text as="p" variant="xLarge" block>
+            Thank you for downloading Trici for {foundPlatform}!
+          </Text>
+          <Text as="p" variant="large" block>
+            The link to download has been sent to the email you provided!
+          </Text>
+        </>
+      )}
+      
     </div>
   )
 
@@ -232,12 +262,25 @@ const ThankYou: React.FunctionComponent = () => {
     )
   }
   if (foundPlatform === "Windows") {
-    downloadSuccessMessageBarPartial = (
-      <div>
-        Please sign up below to get notified when Trici for Windows becomes
-        available for download.
-      </div>
-    )
+    if (showSignUp) {
+      downloadSuccessMessageBarPartial = (
+        <div>
+          Please sign up below to get notified when Trici for Windows becomes
+          available for download.
+        </div>
+      )
+    } else {
+      downloadSuccessMessageBarPartial  = (
+        <div>
+          <Text as="p" variant="xLarge" block>
+            Thank you for signing up for Trici for Windows!
+          </Text>
+          <Text as="p" variant="large" block>
+            You will be notified when Trici for Windows becomes available.
+          </Text>
+        </div>
+      )
+    }
   }
 
   if (downloadUrl === "signup") {
@@ -265,7 +308,7 @@ const ThankYou: React.FunctionComponent = () => {
           {downloadSuccessMessageBarPartial}
         </div>
         <div className="ms-depth-4 signupFormContainer">
-          {showSignUpSuccess ? (
+          {showSignUpSuccess || !showSignUp ? (
             <div className={showSignUpSuccessWithVideoCss}>
               <Text as="p" variant="xLarge" block>
                 Thank you for signing up!

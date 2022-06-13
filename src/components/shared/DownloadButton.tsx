@@ -182,6 +182,9 @@ const DownloadButton: React.FunctionComponent = (props) => {
         }
         if (willNavigate) {
             console.log("Will Navitage to: " + downloadUrl)
+            if (directDownloadAllowed) {
+                downloadUrl = downloadUrl + "&showSignUp=true"
+            }
             window.location.href = downloadUrl
         }
     }
