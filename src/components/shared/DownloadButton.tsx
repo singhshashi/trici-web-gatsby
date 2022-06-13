@@ -23,7 +23,7 @@ const dialogContentProps = {
 //   subText: 'Do you want to send this message without a subject?',
 };
 
-const macArchitectureSelectionModalProps = {
+const architectureSelectionModalProps = {
     isBlocking: false,
     topOffsetFixed: true,
 };
@@ -40,6 +40,16 @@ const macArchitectureSelectionDialogProps = {
     }
 };
 
+const linuxArchitectureSelectionDialogProps = {
+    type: DialogType.largeHeader,
+    title: 'Select installer type',
+    closeButtonAriaLabel: 'Close',
+    styles: {
+        header: {
+            textAlign: 'center',
+        }
+    }
+};
 const getNameValidationErrorMessage = (value) => {
     return value.trim().length < 2 ? 'Name is required' : '';
 };
@@ -56,6 +66,7 @@ const DownloadButton: React.FunctionComponent = (props) => {
 
     const [ hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
     const [ hideMacArchitectureSelectionDialog, { toggle: toggleHideMacArchitectureSelectionDialog }] = useBoolean(true);
+    const [ hideLinuxArchitectureSelectionDialog, { toggle: toggleHideLinuxArchitectureSelectionDialog }] = useBoolean(true);
     const [ directDownloadAllowed, { toggle: toggleDirectDownloadAllowed }] = useBoolean(false);
     const [ osSelected, setOSSelected ] = useState('');
     const [ name, setName ] = useState('');
@@ -248,7 +259,7 @@ const DownloadButton: React.FunctionComponent = (props) => {
                 <Dialog
                     hidden={hideMacArchitectureSelectionDialog}
                     onDismiss={toggleHideMacArchitectureSelectionDialog}
-                    modalProps={macArchitectureSelectionModalProps}
+                    modalProps={architectureSelectionModalProps}
                     dialogContentProps={macArchitectureSelectionDialogProps}
                 >
                         <Stack tokens={macArchSelectionStackTokens}>
@@ -262,6 +273,24 @@ const DownloadButton: React.FunctionComponent = (props) => {
 
                             </Stack.Item>
                         </Stack>
+                </Dialog>
+                <Dialog
+                    hidden={hideLinuxArchitectureSelectionDialog}
+                    onDismiss={toggleHideLinuxArchitectureSelectionDialog}
+                    modalProps={architectureSelectionModalProps}
+                    dialogContentProps={linuxArchitectureSelectionDialogProps}
+                >
+                    <Stack tokens={macArchSelectionStackTokens}>
+                        <Stack.Item>
+                            <PrimaryButton onClick={() => downloadInstaller('debian-x64')} styles={macArchitectureSelectionButtonStyles} text="Debian x64"></PrimaryButton>
+                        </Stack.Item>
+                        <Stack.Item>
+                            <PrimaryButton onClick={() => downloadInstaller('rpm-x64')} styles={macArchitectureSelectionButtonStyles} text="RPM x64"></PrimaryButton>
+                        </Stack.Item>
+                        <Stack.Item>
+                            <PrimaryButton onClick={() => downloadInstaller('linux-zip-x64')} styles={macArchitectureSelectionButtonStyles} text="Linux x64"></PrimaryButton>
+                        </Stack.Item>
+                    </Stack>
                 </Dialog>
                 <Dialog
                     hidden={hideDialog}
