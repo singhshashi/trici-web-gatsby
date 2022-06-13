@@ -73,6 +73,8 @@ const ThankYou: React.FunctionComponent = () => {
         return "Mac Apple Silicon"
       case "debian-x64":
         return "Ubuntu"
+      case "linux-zip-x64":
+        return "Linux"
       case "windows-x64":
         return "Windows"
       default:
@@ -96,7 +98,10 @@ const ThankYou: React.FunctionComponent = () => {
         return "https://download.gettrici.com/darwin-arm64/Trici-2.6.1-arm64.dmg"
       }
       case "debian-x64": {
-        return "https://download.gettrici.com/linux-x64/trici_2.4.0_amd64.deb"
+        return "https://download.gettrici.com/linux-x64/trici_2.9.0_amd64.deb"
+      }
+      case "linux-zip-x64": {
+        return "https://download.gettrici.com/linux-x64/trici_2.9.0_amd64.zip"
       }
       default: {
         return "unknown"
