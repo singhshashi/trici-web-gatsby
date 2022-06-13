@@ -112,7 +112,7 @@ const ThankYou: React.FunctionComponent = () => {
       toggleShowSignUp()
     } 
     setPlatform(platform)
-    const isMobile = window.mobileCheck();
+    const isMobile = mobileCheck();
     console.log("isMobile: " + isMobile);
     console.log("platform:", platform);
     axios
