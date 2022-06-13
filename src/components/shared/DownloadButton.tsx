@@ -214,7 +214,8 @@ const DownloadButton: React.FunctionComponent = (props) => {
             } else if (platform === 'Windows') {
                 downloadInstaller(platform);
             } else if (platform === 'Linux') {
-                downloadInstaller(platform);
+                toggleHideLinuxArchitectureSelectionDialog();
+                // downloadInstaller(platform);
             }
         } else {
             toggleHideDialog();
@@ -283,9 +284,6 @@ const DownloadButton: React.FunctionComponent = (props) => {
                     <Stack tokens={macArchSelectionStackTokens}>
                         <Stack.Item>
                             <PrimaryButton onClick={() => downloadInstaller('debian-x64')} styles={macArchitectureSelectionButtonStyles} text="Debian x64"></PrimaryButton>
-                        </Stack.Item>
-                        <Stack.Item>
-                            <PrimaryButton onClick={() => downloadInstaller('rpm-x64')} styles={macArchitectureSelectionButtonStyles} text="RPM x64"></PrimaryButton>
                         </Stack.Item>
                         <Stack.Item>
                             <PrimaryButton onClick={() => downloadInstaller('linux-zip-x64')} styles={macArchitectureSelectionButtonStyles} text="Linux x64"></PrimaryButton>
