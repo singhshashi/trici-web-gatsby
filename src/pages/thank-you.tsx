@@ -66,20 +66,23 @@ const ThankYou: React.FunctionComponent = () => {
   }
 
   const getFoundPlatform = platform => {
-    switch (platform) {
-      case "macos-x64":
-        return "Mac Intel"
-      case "macos-arm64":
-        return "Mac Apple Silicon"
-      case "debian-x64":
-        return "Ubuntu"
-      case "linux-zip-x64":
-        return "Linux"
-      case "windows-x64":
-        return "Windows"
-      default:
-        return "unknown"
+    if (platform.length > 0) {
+      switch (platform) {
+        case "macos-x64":
+          return "Mac Intel"
+        case "macos-arm64":
+          return "Mac Apple Silicon"
+        case "debian-x64":
+          return "Ubuntu"
+        case "linux-zip-x64":
+          return "Linux"
+        case "windows-x64":
+          return "Windows"
+        default:
+          return "unknown"
+      }
     }
+    return "uninitialized";
   }
 
   const getEmailValidationErrorMessage = value => {
@@ -227,7 +230,7 @@ const ThankYou: React.FunctionComponent = () => {
 
   let signUpForLatestUpdatesLabel = "Sign up to get latest updates";
   if (platform === "windows-x64") {
-    signUpForLatestUpdatesLabel = "Trici for Windows will launch next month. Sign up to get notified."; 
+    signUpForLatestUpdatesLabel = "Trici for Windows will launch next month. Sign up to get notified!"; 
   }
 
 
@@ -260,6 +263,12 @@ const ThankYou: React.FunctionComponent = () => {
       
     </div>
   )
+
+  if (foundPlatform === "uninitialized") {
+    downloadSuccessMessageBarPartial = (
+      <div></div>
+    )
+  }
 
   if (foundPlatform === "unknown") {
     thankYouMessageCss = mergeStyles({
