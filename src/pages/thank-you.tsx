@@ -225,6 +225,11 @@ const ThankYou: React.FunctionComponent = () => {
   })
   const foundPlatform = getFoundPlatform(platform)
 
+  let signUpForLatestUpdatesLabel = "Sign up to get latest updates";
+  if (platform === "windows-x64") {
+    signUpForLatestUpdatesLabel = "Trici for Windows will launch next month. Sign up to get notified."; 
+  }
+
 
 
   console.log("isMobile: " + isMobile);
