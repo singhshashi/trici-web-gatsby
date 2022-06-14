@@ -344,7 +344,7 @@ const ThankYou: React.FunctionComponent = () => {
             <Stack tokens={verticalGapStackTokens}>
               <Stack.Item>
                 <Text as="p" variant="xLarge" block>
-                  Sign up to get the latest updates
+                  {signUpForLatestUpdatesLabel}
                 </Text>
               </Stack.Item>
               <Stack.Item>
