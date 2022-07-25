@@ -13,9 +13,11 @@ html,
 }
 
 .headerSection {
-  background-color: #191970;
+  /* background-color: #191970;
   /* background-image: linear-gradient( 72.1deg,  rgba(25,25,112,1) 1.7%, rgb(90, 90, 169) 99.1% ); */
-  background-image: linear-gradient( 72.1deg,  rgba(25,25,112,1) 1.7%, rgb(66, 66, 153) 99.1% );
+  /* background-image: linear-gradient( 72.1deg,  rgba(25,25,112,1) 1.7%, rgb(66, 66, 153) 99.1% ); */
+  background-color: #0075ea;
+  background-image: linear-gradient( 72.1deg,  #0059b2 1.7%, #0075ea 99.1% );
   background-attachment: fixed;
   background-size: cover;
   padding-top: 15px;
@@ -32,8 +34,8 @@ html,
 }
 
 .footerSection {
-  background-color: #191970;
-  background-image: linear-gradient( 72.1deg,  rgba(25,25,112,1) 1.7%, rgb(90, 90, 169) 99.1% );
+  background-color: #0075ea;
+  background-image: linear-gradient( 72.1deg,  #0059b2 1.7%, #0075ea 99.1% );
 background-attachment: fixed;
 background-size: cover;;
 }

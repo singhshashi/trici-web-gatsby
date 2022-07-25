@@ -63,7 +63,6 @@ const App: React.FunctionComponent = () => {
       {/* <ScreensCarousel /> */}
       <div className={appStyles.lastDownloadButtonContainer}>
         <DownloadButton hero={false} />
-        {/* <PrimaryButton text="Download for Free" onClick={gotoDownloads} iconProps={{ iconName: "Installation" }} styles={downloadButtonStyles} id="btnDownloadForFree" />     */}
       </div>
     </Layout>
   )

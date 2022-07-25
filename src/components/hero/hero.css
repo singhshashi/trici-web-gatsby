@@ -3,8 +3,8 @@
     padding: 5px;
     padding-bottom: 30px;
     background-size: cover;
-    background-color: #191970;
-    background-image: linear-gradient( 72.1deg,  rgba(25,25,112,1) 1.7%, rgb(66, 66, 153) 99.1% );
+    background-color: #0075ea;
+    background-image: linear-gradient( 72.1deg,  #0059b2 1.7%, #0075ea 99.1% );
     /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='100%25' y2='0' gradientTransform='rotate(0,934,484)'%3E%3Cstop offset='0' stop-color='%230b7b9f' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%230b7b9f'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='100%25' gradientTransform='rotate(204,934,484)'%3E%3Cstop offset='0' stop-color='%23191970' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23191970'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1600' height='900'/%3E%3Crect fill='url(%23b)' fill-opacity='0' width='1600' height='900'/%3E%3C/svg%3E"); */
     background-attachment: fixed;
 
@@ -73,7 +73,7 @@
 .myPrimaryButton {
     margin:auto;
     background-color:white;
-    color:#191970;
+    color:#0075ea;
     font-weight: 900;
     text-align: center;
     height: 70px;
@@ -92,7 +92,7 @@
 
 .myPrimaryButton > a {
     text-decoration: none;
-    color: #191970
+    color: #0075ea;
 }
 .myPrimaryButton > a:hover {
     color: #fff;

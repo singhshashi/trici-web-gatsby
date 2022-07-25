@@ -104,9 +104,37 @@ const themeBhor = createTheme({
     white: '#ffffff',
   }});
 
+  const hardikaTheme = createTheme({
+    palette: {
+      themePrimary: '#0075ea',
+      themeLighterAlt: '#f4f9fe',
+      themeLighter: '#d3e8fc',
+      themeLight: '#aed4f9',
+      themeTertiary: '#61aaf3',
+      themeSecondary: '#1c85ed',
+      themeDarkAlt: '#006ad3',
+      themeDark: '#0059b2',
+      themeDarker: '#004283',
+      neutralLighterAlt: '#faf9f8',
+      neutralLighter: '#f3f2f1',
+      neutralLight: '#edebe9',
+      neutralQuaternaryAlt: '#e1dfdd',
+      neutralQuaternary: '#d0d0d0',
+      neutralTertiaryAlt: '#c8c6c4',
+      neutralTertiary: '#a19f9d',
+      neutralSecondary: '#605e5c',
+      neutralPrimaryAlt: '#3b3a39',
+      neutralPrimary: '#323130',
+      neutralDark: '#201f1e',
+      black: '#000000',
+      white: '#ffffff',
+    }});
+  
+
     export const themes = {
         themeTriciDark: themeTriciDark,
         themeTriciLight: themeTriciLight,
         themeBhor: themeBhor,
-        themeFabricDefault: myTheme
+        themeFabricDefault: myTheme,
+        themeHardika: hardikaTheme,
     }

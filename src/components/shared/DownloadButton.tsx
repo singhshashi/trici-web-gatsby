@@ -226,7 +226,9 @@ const DownloadButton: React.FunctionComponent = (props) => {
     console.log("DownloadButtonProps:", props);
 
     const heroButtonStyles = {
-        root: { height: props.hero ? 80 : 50, minWidth: props.hero ? 320 : 260, backgroundColor: props.hero ? '#fff' : '#191970' , color: props.hero ? '#191970' : '#fff', borderRadius: 5, boxShadow: boxShadowDefinition},
+        root: { height: props.hero ? 80 : 50, minWidth: props.hero ? 320 : 260, backgroundColor: props.hero ? '#fff' : '#004283' , color: props.hero ? '#004283' : '#fff', borderRadius: 5, boxShadow: boxShadowDefinition},
+        rootHovered: { backgroundColor: props.hero ? '#004283' : '#0059b2', color: props.hero ? '#fff' : '#fff' },
+        rootPressed: { backgroundColor: props.hero ? '#004283' : '#0059b2', color: props.hero ? '#fff' : '#fff' },
         label: { fontSize: props.hero ? 24 : 20 , fontWeight: 'bold' }
     }
 

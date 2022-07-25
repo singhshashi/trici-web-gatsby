@@ -293,7 +293,7 @@ const ThankYou: React.FunctionComponent = () => {
     )
   }
   if (foundPlatform === "Windows") {
-    if (showSignUp) {
+    if (showSignUp && !showSignUpSuccess) {
       downloadSuccessMessageBarPartial = (
         <div>
           Please sign up below to get notified when Trici for Windows becomes
