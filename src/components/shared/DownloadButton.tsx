@@ -258,7 +258,7 @@ const DownloadButton: React.FunctionComponent = (props) => {
 
     return (
             <div className="hero_cta">
-                <PrimaryButton text="Download for Free" onClick={handleDownloadClick} styles={heroButtonStyles} iconProps={{ iconName: "Installation" }} id="btnDownloadForFree" />
+                <PrimaryButton text="Download for Free" onClick={handleDownloadClick} styles={heroButtonStyles} iconProps={{ iconName: "Installation" }} id={props.id} />
                 <Dialog
                     hidden={hideMacArchitectureSelectionDialog}
                     onDismiss={toggleHideMacArchitectureSelectionDialog}

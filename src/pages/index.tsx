@@ -54,6 +54,7 @@ const App: React.FunctionComponent = () => {
       <title>Trici - Recover your train of thought after any interruption</title>
       <meta name="description" content="Start a Focus Session on Trici, record your screen activity and then watch a smart replay to recover your exact train of thought in less than 2 minutes." />
       <meta name="keywords" content="pomodoro, timer, screen recording, productivity, interruption, focus, deep work" />
+      <meta name="twitter:card" content="player" />
     </Helmet>
       <Hero />
       <HowItWorks />
@@ -62,7 +63,7 @@ const App: React.FunctionComponent = () => {
       <FaqMain />
       {/* <ScreensCarousel /> */}
       <div className={appStyles.lastDownloadButtonContainer}>
-        <DownloadButton hero={false} />
+        <DownloadButton hero={false} id="btnEndOfPageDownloadForFree" />
       </div>
     </Layout>
   )

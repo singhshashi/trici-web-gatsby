@@ -90,7 +90,7 @@ const Benefits: React.FunctionComponent = () => {
       <br />
       <br />
       <br />
-      <DownloadButton hero={false} />
+      <DownloadButton hero={false} id="btnBenefitsDownloadForFree" />
       {/* <PrimaryButton text="Download for Free" onClick={gotoDownloads} iconProps={{ iconName: "Installation" }} styles={downloadButtonStyles} id="btnDownloadForFree" />     */}
     </div>
   )

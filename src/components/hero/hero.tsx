@@ -57,7 +57,7 @@ const HeroContainer: React.FunctionComponent = () =>  {
                 <p className="byline">Trici is a productivity tool that helps developers recover from any interruption in less than 2 minutes!</p>
                     {/* <p className="byline">Record and recap your Focus Sessions and rebuild your lost train of thought in seconds!</p> */}
             </div>
-            <DownloadButton hero={true}/>
+            <DownloadButton hero={true} id="btnHeroDownloadForFree"/>
             <p className="available-announcement">Available for MacOS and Ubuntu. Coming Soon for Windows<sup>*</sup></p>
             </div>
             {/* <HowItWorksShort /> */}
