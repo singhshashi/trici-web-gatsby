@@ -29,7 +29,11 @@
 .logo {
   height: 70px;
 }
-
+.beta {
+  color: #fff;
+  margin: 5px;
+  font-style: oblique;
+}
 .headerNavLink {
   color: white;
 }

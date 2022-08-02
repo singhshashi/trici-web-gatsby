@@ -52,6 +52,7 @@ const Footer = () => {
               </Stack>
           </Stack.Item>
             <Stack.Item>
+              <Text as="p" variant="smallPlus" block>Send feedback on discord</Text>
               <a href="https://discord.gg/866ErbpvEF"><img src="images/join_discord.webp" alt="join us on discord" width="100px" /></a>
           </Stack.Item>
           

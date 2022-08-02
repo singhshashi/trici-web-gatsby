@@ -10,8 +10,7 @@ import { themes } from "../../common/themes"
 import { ThemeProvider } from "@fluentui/react-theme-provider"
 import "./header.css"
 
-const themeTriciDark = themes.themeTriciDark ;
-const themeBhor = themes.themeBhor;
+
 
 const Header: React.FunctionComponent = () => {
   const [menuVisible, setMenuVisible] = useState(false)
@@ -26,6 +25,7 @@ const Header: React.FunctionComponent = () => {
                 className="logo"
               />
             </a>
+            <span className="beta">beta</span>
           </div>
           {/* <div className="links">
             <Link href="/a-radical-new-approach-to-productivity" theme={themeTriciDark}>Why Trici?</Link> 
