@@ -205,6 +205,12 @@ const DownloadButton: React.FunctionComponent = (props) => {
         const isMobile = window.mobileCheck();
         console.log("isMobile: " + isMobile);
 
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'download-button-clicked',
+            buttonId: props.id,
+        }); 
+
         if (!isMobile && directDownloadAllowed) {
             const platform = getPlatform();
             console.log(platform)
