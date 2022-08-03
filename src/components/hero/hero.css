@@ -49,6 +49,21 @@
 }
 }
 
+@media (max-width: 450px) {
+.hero_container {
+    padding: 20px;
+}
+.hero_pitch h1 {
+    font-size: 3.5em;
+    line-height: 1.4em;
+}
+.hero_byline_container .byline {
+    font-size: 18px;
+    font-weight: 400;
+}
+}
+
+
 .hero_pitch span.highlight {
     color: #eebf3f;
     /* font-style: oblique; */
