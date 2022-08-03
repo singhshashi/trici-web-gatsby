@@ -71,6 +71,7 @@ const DownloadButton: React.FunctionComponent = (props) => {
     const [ osSelected, setOSSelected ] = useState('');
     const [ name, setName ] = useState('');
     const [ email, setEmail ] = useState('');
+    const [ downloadButtonText, setDownloadButtonText ] = useState('Download For Free');
     const [ inviteCode, setInviteCode ] = useState('');
     const [ formReady, {toggle: toggleFormReady }] = useBoolean(false);
     const [ showSpinner, { toggle: toggleShowSpinner }] = useBoolean(false);
@@ -124,6 +125,10 @@ const DownloadButton: React.FunctionComponent = (props) => {
         if (ref === "hn" && !directDownloadAllowed) {
             toggleDirectDownloadAllowed();
             console.log("directDownloadAllowed:", directDownloadAllowed);
+        }
+        const isMobile = typeof window !== 'undefined' && window.mobileCheck();
+        if (isMobile) {
+            setDownloadButtonText('Get Download Link');
         }
     });
 
@@ -237,13 +242,6 @@ const DownloadButton: React.FunctionComponent = (props) => {
         }
     }
 
-    const getDownloadButtonText = () => {
-        const isMobile = window.mobileCheck();
-        if (isMobile) {
-            return "Get Download Link";
-        }
-        return "Download For Free";
-    }
 
     const boxShadowDefinition= '0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)';
 
@@ -280,7 +278,7 @@ const DownloadButton: React.FunctionComponent = (props) => {
 
     return (
             <div className="hero_cta">
-                <PrimaryButton text={getDownloadButtonText()} onClick={handleDownloadClick} styles={heroButtonStyles} iconProps={{ iconName: "Installation" }} id={props.id} />
+                <PrimaryButton text={downloadButtonText} onClick={handleDownloadClick} styles={heroButtonStyles} iconProps={{ iconName: "Installation" }} id={props.id} />
                 <Dialog
                     hidden={hideMacArchitectureSelectionDialog}
                     onDismiss={toggleHideMacArchitectureSelectionDialog}
