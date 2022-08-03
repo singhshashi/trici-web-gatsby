@@ -54,8 +54,8 @@ const HeroContainer: React.FunctionComponent = () =>  {
                 <h1>Recover <span className="highlight">Faster</span> From Developer Interruptions</h1>
             </div>
             <div className="hero_byline_container">
-                <p className="byline">Trici is a productivity tool that helps developers recover from any interruption in less than 2 minutes!</p>
-                    {/* <p className="byline">Record and recap your Focus Sessions and rebuild your lost train of thought in seconds!</p> */}
+                {/* <p className="byline">Trici is a productivity tool that helps developers recover from any interruption in less than 2 minutes!</p> */}
+                <p className="byline">Record and recap your Focus Sessions and recover from any interruption in less than 2 minutes!</p>
             </div>
             <DownloadButton hero={true} id="btnHeroDownloadForFree"/>
             <p className="available-announcement">Available for MacOS and Ubuntu. Coming Soon for Windows<sup>*</sup></p>
