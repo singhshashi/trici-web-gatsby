@@ -236,6 +236,15 @@ const DownloadButton: React.FunctionComponent = (props) => {
             toggleHideDialog();
         }
     }
+
+    const getDownloadButtonText = () => {
+        const isMobile = window.mobileCheck();
+        if (isMobile) {
+            return "Get Download Link";
+        }
+        return "Download For Free";
+    }
+
     const boxShadowDefinition= '0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)';
 
     console.log("DownloadButtonProps:", props);
@@ -267,13 +276,11 @@ const DownloadButton: React.FunctionComponent = (props) => {
 
     const emailFieldDescription = `Only for sending product updates, feedback etc.`;
 
-    
-
 
 
     return (
             <div className="hero_cta">
-                <PrimaryButton text="Download for Free" onClick={handleDownloadClick} styles={heroButtonStyles} iconProps={{ iconName: "Installation" }} id={props.id} />
+                <PrimaryButton text={getDownloadButtonText()} onClick={handleDownloadClick} styles={heroButtonStyles} iconProps={{ iconName: "Installation" }} id={props.id} />
                 <Dialog
                     hidden={hideMacArchitectureSelectionDialog}
                     onDismiss={toggleHideMacArchitectureSelectionDialog}
