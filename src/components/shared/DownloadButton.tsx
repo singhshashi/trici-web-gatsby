@@ -79,12 +79,21 @@ const DownloadButton: React.FunctionComponent = (props) => {
 
     const onChangeName = useCallback((evt, newValue) => { setName(newValue); });
     const onChangeEmail = useCallback((evt, newValue) => { setEmail(newValue);});
-    const onChangeOSSelected = useCallback((ev, option) => { setOSSelected(option.key)});
+    const onChangeOSSelected = useCallback((ev, option) => {  
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'os-selected',
+            os: option.key,
+        }); 
+        setOSSelected(option.key)
+    });
 
 
     const submitForm = useCallback(() => {
         toggleShowSpinner();
         toggleFormReady();
+      
         const formData = {
             name: name,
             email: email,
