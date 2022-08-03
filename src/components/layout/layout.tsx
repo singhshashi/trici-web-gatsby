@@ -13,9 +13,9 @@ initializeIcons("/icons/");
 const Layout: React.FunctionComponent = props => {
   const themeLight = themes.themeTriciLight;
   const themeDark = themes.themeTriciDark;
-  const themeBhor = themes.themeBhor;
+  const themeHardika = themes.themeHardika;
   return (
-    <ThemeProvider theme={themeBhor}>
+    <ThemeProvider theme={themeHardika}>
       <div className="page-container">
         <div className="headerSection">
           <Header />
