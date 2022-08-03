@@ -208,7 +208,7 @@ const DownloadButton: React.FunctionComponent = (props) => {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             event: 'download-button-clicked',
-            buttonId: props.id,
+            downloadButtonId: props.id,
         }); 
 
         if (!isMobile && directDownloadAllowed) {
