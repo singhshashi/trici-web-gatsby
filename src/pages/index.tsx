@@ -52,17 +52,17 @@ const App: React.FunctionComponent = () => {
     <Layout>
     <Helmet>
       <title>Trici - Recover your train of thought after any interruption</title>
-      <meta name="description" content="Trici is a desktop application which lets you record your Focus Sessions and then allows ." />
-      <meta name="keywords" content="pomodoro, timer, screen recording, productivity, interruption, focus, deep work, adhd" />
-      <meta name="twitter:card" content="player" />
+      <meta name="description" content="Trici is a desktop application which lets you record your screen during a Focus Session and then replay the screen activity at high speed to recover your lost train of thought." />
+      <meta name="keywords" content="pomodoro, timer, screen recording, productivity, interruption, focus, deep work, adhd, context switching, train of thought, chain of thought" />
+      <meta name="twitter:card" content="summary" />
 	    <meta name="twitter:site" content="@gettrici" />
 	    <meta name="twitter:title" content="Trici - Recover faster from Developer Interruptions. " />
 	    <meta name="twitter:description"
 		    content="Record and recap your focus sessions and recover from any interruption in less than 2 minutes." />
 	    <meta name="twitter:image" content="https://gettrici.com/twittercard/dev_interruptions_recovery.png" />
-	    <meta name="twitter:player" content="https://gettrici.com/twittercard/container.html" />
+	    {/* <meta name="twitter:player" content="https://gettrici.com/twittercard/container.html" />
 	    <meta name="twitter:player:width" content="480" />
-	    <meta name="twitter:player:height" content="480" />
+	    <meta name="twitter:player:height" content="480" /> */}
     </Helmet>
       <Hero />
       <HowItWorks />
