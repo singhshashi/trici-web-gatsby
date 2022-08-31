@@ -63,6 +63,11 @@ const MoreBenefits: React.FunctionComponent = () => {
           <Text as="h6" variant="xLargePlus" block>Automatic Daily Work Log</Text>
           <Text as="p" variant="large" block>Trici keeps a log of your daily work. Add tasks to your day plan, note down thoughts about the day.</Text>
         </div>
+        <div className="morebenefits-item">
+          <FontIcon iconName="Cut" className={iconClass} />
+          <Text as="h6" variant="xLargePlus" block>Create Clips</Text>
+          <Text as="p" variant="large" block>Create smaller clips from your Focus Session recordings.</Text>
+        </div>
       </div>
           {/* <PrimaryButton text="Download for Free" onClick={gotoDownloads} iconProps={{ iconName: "Installation" }} id="btnDownloadForFree" /> */}
     </div>
