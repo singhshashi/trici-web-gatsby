@@ -71,7 +71,7 @@ const DownloadButton: React.FunctionComponent = (props) => {
     const [ osSelected, setOSSelected ] = useState('');
     const [ name, setName ] = useState('');
     const [ email, setEmail ] = useState('');
-    const [ downloadButtonText, setDownloadButtonText ] = useState('Download For Free');
+    const [ downloadButtonText, setDownloadButtonText ] = useState('Request Access');
     const [ inviteCode, setInviteCode ] = useState('');
     const [ formReady, {toggle: toggleFormReady }] = useBoolean(false);
     const [ showSpinner, { toggle: toggleShowSpinner }] = useBoolean(false);
